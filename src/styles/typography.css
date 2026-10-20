@@ -1,0 +1,173 @@
+/* font declarations */
+
+/* Instrument Serif: Regular */
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("../assets/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Instrument Serif: Italic */
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("../assets/fonts/Instrument_Serif/InstrumentSerif-Italic.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* IBM Plex Mono: regular */
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* IBM Plex Mono: medium */
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf")
+        format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* IBM Plex Mono: semibold */
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../assets/fonts/IBM_Plex_Mono/IBMPlexMono-SemiBold.ttf")
+        format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Typography utility classes */
+
+/* Display — Instrument Serif 400 */
+.text-display-1 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--font-size-display-1);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-1);
+}
+
+.text-display-2 {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: var(--font-size-display-2);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-2);
+}
+
+.text-display-3 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-3);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-3);
+}
+
+.text-display-4 {
+    font-family: var(--font-display);
+    font-size: var(--font-size-display-4);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-4);
+}
+
+/* Headings — IBM Plex Mono 600 */
+.text-heading-1 {
+    font-family: var(--font-default);
+    font-size: var(--font-size-heading-1);
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-heading-1);
+}
+
+.text-heading-2 {
+    font-family: var(--font-default);
+    font-size: var(--font-size-heading-2);
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-heading-2);
+}
+
+.text-heading-3 {
+    font-family: var(--font-default);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-heading-3);
+}
+
+.text-heading-4 {
+    font-family: var(--font-default);
+    font-size: var(--font-size-heading-4);
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-heading-4);
+}
+
+/* Subheading — IBM Plex Mono 500 */
+.text-subheading {
+    font-family: var(--font-default);
+    font-size: var(--font-size-subheading);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-subheading);
+}
+
+/* Body — IBM Plex Mono 400 */
+.text-body-s {
+    font-family: var(--font-default);
+    font-size: var(--font-size-body-s);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-body-s);
+}
+
+.text-body-m {
+    font-family: var(--font-default);
+    font-size: var(--font-size-body-m);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-body-m);
+}
+
+/* Mono — IBM Plex Mono 500 */
+.text-mono-s {
+    font-family: var(--font-default);
+    font-size: var(--font-size-mono-s);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-mono-s);
+}
+
+.text-mono-m {
+    font-family: var(--font-default);
+    font-size: var(--font-size-mono-m);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-mono-m);
+}
+
+/* Small utility styles — IBM Plex Mono 600/500 */
+.text-caption {
+    font-family: var(--font-default);
+    font-size: var(--font-size-caption);
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-caption);
+}
+
+.text-label {
+    font-family: var(--font-default);
+    font-size: var(--font-size-label);
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-label);
+}
+
+.text-nav {
+    font-family: var(--font-default);
+    font-size: var(--font-size-nav);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-nav);
+}

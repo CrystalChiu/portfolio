@@ -1,0 +1,107 @@
+/* src/styles/tokens.css */
+
+:root {
+    /* color tokens */
+    --color-bg: #FAFAFD;
+    --color-surface: #FFFFFF;
+    --color-surface-elevated: #FFFEFE;
+    --color-text-primary: #363232;
+    --color-text-secondary: #807978;
+    --color-text-tertiary: #BEBBBA;
+    --color-border: #FDFBF9;
+    --color-divider: #EBE9E5;
+    --color-primary: #5E7AE7;
+    --color-secondary: #6B5045;
+    --color-accent-beige: #EEF1FC;
+    --color-accent-light-blue: #B9C4ED;
+    --color-accent-dark-blue: #1C2342;
+    --color-accent-light-brown: #4B3730;
+    --color-accent-dark-brown: #2E211D;
+
+    /* shared typography tokens */
+    --font-display: "Instrument Serif", serif;
+    --font-default: "IBM Plex Mono", monospace;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+
+    /* role based typography tokens */
+    /* display */
+    --font-size-display-1: clamp(50px, 6vw, 90px);
+    --font-size-display-2: clamp(40px, 5.556vw, 80px);
+    --font-size-display-3: clamp(36px, 4.444vw, 64px);
+    --font-size-display-4: clamp(28px, 3.333vw, 48px);
+
+    /* heading */
+    --font-size-heading-1: clamp(28px, 2.778vw, 40px);
+    --font-size-heading-2: clamp(24px, 2.222vw, 32px);
+    --font-size-heading-3: clamp(20px, 1.667vw, 24px);
+    --font-size-heading-4: clamp(18px, 1.389vw, 20px);
+
+    /* subheading */
+    --font-size-subheading: clamp(18px, 1.389vw, 20px);
+
+    /* body */
+    --font-size-body-s: 14px;
+    --font-size-body-m: 16px;
+
+    /* mono */
+    --font-size-mono-s: 12px;
+    --font-size-mono-m: 14px;
+
+    /* small utilities */
+    --font-size-caption: 14px;
+    --font-size-label: 14px;
+    --font-size-nav: 14px;
+
+    /* line-heights (unitless, scale proportionally with font-size) */
+    --line-height-display-1: 1.21;
+    --line-height-display-2: 1.19;
+    --line-height-display-3: 0.97;
+    --line-height-display-4: 1;
+    --line-height-heading-1: 1.1;
+    --line-height-heading-2: 1.13;
+    --line-height-heading-3: 1.21;
+    --line-height-heading-4: 1.25;
+    --line-height-subheading: 1.5;
+    --line-height-body-s: 1.43;
+    --line-height-body-m: 1.56;
+    --line-height-mono-s: 1.42;
+    --line-height-mono-m: 1.43;
+    --line-height-caption: 1.43;
+    --line-height-label: 1.43;
+    --line-height-nav: 1.43;
+
+    /* spacing tokens, 4px system */
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+    --space-56: 56px;
+    --space-64: 64px;
+
+    /* corner-radius tokens */
+    --corner-radius-sm: 4;
+    --corner-radius-md: 8;
+    --corner-radius-lg: 12;
+    --corner-radius-xl: 20;
+
+    /* line-tokens */
+    --line-weight: 1.5;
+
+    /* shadow-tokens */
+    --shadow-x-offset: 0;
+    --shadow-y-offset: 2;
+    --shadow-blur: 15; 
+
+    /* layout tokens */
+    --page-max-width: 1440px;
+    --page-padding-inline: clamp(20px, 4.444vw, 64px);
+    --page-padding: clamp(24px, 2vw, 32px);
+}
