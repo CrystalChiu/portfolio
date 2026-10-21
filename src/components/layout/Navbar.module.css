@@ -1,0 +1,110 @@
+
+.header {
+  width: 100%;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.nav {
+  width: 100%;
+  max-width: var(--page-max-width);
+  min-height: 72px;
+  margin-inline: auto;
+  padding-inline: var(--page-padding-inline);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+
+.logo {
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--font-size-heading-3);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-heading-3);
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-32);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  color: var(--color-text-secondary);
+  font-family: var(--font-default);
+  font-size: var(--font-size-nav);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-nav);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.links a:hover {
+  color: var(--color-primary);
+}
+
+.logo:focus-visible,
+.links a:focus-visible,
+.menuToggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.menuToggle {
+  display: none;
+  padding: var(--space-8) var(--space-12);
+  border: 1px solid var(--color-divider);
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    min-height: 64px;
+    flex-wrap: wrap;
+    gap: var(--space-12);
+    padding-block: var(--space-12);
+  }
+
+  .menuToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-block: var(--space-8);
+  }
+
+  .linksOpen {
+    display: flex;
+  }
+
+  .links a {
+    display: block;
+    padding-block: var(--space-12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links a {
+    transition: none;
+  }
+}
+

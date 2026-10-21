@@ -27,8 +27,6 @@ body {
     font-weight: var(--weight-regular);
     line-height: var(--line-height-body-m);
     color: var(--color-text-primary);
-
-    padding: var(--page-padding);
 }
 
 img,

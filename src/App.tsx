@@ -1,11 +1,32 @@
-// import { useState } from 'react'
+import Navbar from "./components/layout/Navbar";
+import PageLayout from "./components/layout/PageLayout";
+import "./styles/global.css";
 
-function App() {
+export default function App() {
   return (
     <>
-      <h1 className="text-display-2">Hey Hi Hello!</h1>
-    </>
-  )
-}
+      <Navbar />
 
-export default App
+      <main>
+        <PageLayout>
+          <section id="about">
+            <h1>About</h1>
+            <p>This is where the portfolio begins.</p>
+          </section>
+
+          <section id="work">
+            <h2>Work Showcase</h2>
+          </section>
+
+          <section id="experience">
+            <h2>Experience</h2>
+          </section>
+
+          <section id="contact">
+            <h2>Contact</h2>
+          </section>
+        </PageLayout>
+      </main>
+    </>
+  );
+}
