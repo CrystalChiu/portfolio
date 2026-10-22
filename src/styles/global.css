@@ -1,4 +1,7 @@
-/* src/styles/global.css */
+/* src/styles/global.css — entry point for all global styles */
+
+@import "./tokens.css";
+@import "./typography.css";
 
 *,
 *::before,
