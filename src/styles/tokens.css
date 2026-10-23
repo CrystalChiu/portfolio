@@ -87,21 +87,22 @@
     --space-64: 64px;
 
     /* corner-radius tokens */
-    --corner-radius-sm: 4;
-    --corner-radius-md: 8;
-    --corner-radius-lg: 12;
-    --corner-radius-xl: 20;
+    --corner-radius-sm: 4px;
+    --corner-radius-md: 8px;
+    --corner-radius-lg: 12px;
+    --corner-radius-xl: 20px;
 
     /* line-tokens */
-    --line-weight: 1.5;
+    --line-weight: 1.5px;
 
     /* shadow-tokens */
-    --shadow-x-offset: 0;
-    --shadow-y-offset: 2;
-    --shadow-blur: 15; 
+    --shadow-x-offset: 0px;
+    --shadow-y-offset: 2px;
+    --shadow-blur: 15px; 
 
     /* layout tokens */
     --page-max-width: 1440px;
-    --page-padding-inline: clamp(20px, 4.444vw, 64px);
-    --page-padding: clamp(24px, 2vw, 32px);
+    --page-padding-inline: clamp(32px, 4.444vw, 64px);
+    --page-padding-block: clamp(12px, 2vw, 24px);
+    --navbar-height: 72px;
 }

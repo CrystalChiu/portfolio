@@ -4,10 +4,10 @@ import { useState } from "react";
 import styles from "./Navbar.module.css";
 
 const navItems = [
-    { label: "Home", href: "/#hero" },
-    { label: "About", href: "/#about" },
-    { label: "Work Experience", href: "/#experience" },
-    { label: "Contact", href: "#/contact" }
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
+    { label: "Work Experience", href: "#experience" },
+    { label: "Contact", href: "#contact" }
 ];
 
 export default function Navbar() {

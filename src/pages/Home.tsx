@@ -1,29 +1,19 @@
 import PageLayout from "../components/layout/PageLayout";
+import Hero from "../components/sections/home/Hero";
+import About from "../components/sections/home/About";
+import WorkShowcase from "../components/sections/home/WorkShowcase";
+import Experience from "../components/sections/home/Experience";
+import Contact from "../components/sections/home/Contact";
 
 export default function Home() {
     return (
         <main>
             <PageLayout>
-                <section id="hero">
-                    <h1>Hero</h1>
-                </section>
-
-                <section id="about">
-                    <h1>About</h1>
-                    <p>This is where the portfolio begins.</p>
-                </section>
-
-                <section id="work">
-                    <h2>Work Showcase</h2>
-                </section>
-
-                <section id="experience">
-                    <h2>Experience</h2>
-                </section>
-
-                <section id="contact">
-                    <h2>Contact</h2>
-                </section>
+                <Hero />
+                <About />
+                <WorkShowcase />
+                <Experience />
+                <Contact />
             </PageLayout>
         </main>
     );
