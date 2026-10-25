@@ -1,5 +1,5 @@
 import styles from "./Hero.module.css"
-import IconLabel from "../../ui/IconLabel";
+import IconLabel from "../../../ui/IconLabel/IconLabel";
 import { faMapPin, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faSquareLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 

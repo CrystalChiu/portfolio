@@ -50,12 +50,22 @@
     font-display: swap;
 }
 
+/* Zeyada: Regular (400) */
+@font-face {
+    font-family: "Zeyada";
+    src: url("../assets/fonts/Zeyada/Zeyada-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Typography utility classes */
 
 /* Display — Instrument Serif 400 */
 .text-display-1 {
     font-family: var(--font-display);
-    font-style: italic;
+    font-style: normal;
     font-size: var(--font-size-display-1);
     font-weight: var(--weight-regular);
     line-height: var(--line-height-display-1);
@@ -78,6 +88,38 @@
 
 .text-display-4 {
     font-family: var(--font-display);
+    font-size: var(--font-size-display-4);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-4);
+}
+
+.text-display-1-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--font-size-display-1);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-1);
+}
+
+.text-display-2-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--font-size-display-2);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-2);
+}
+
+.text-display-3-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--font-size-display-3);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-display-3);
+}
+
+.text-display-4-italic {
+    font-family: var(--font-display);
+    font-style: italic;
     font-size: var(--font-size-display-4);
     font-weight: var(--weight-regular);
     line-height: var(--line-height-display-4);
@@ -170,4 +212,12 @@
     font-size: var(--font-size-nav);
     font-weight: var(--weight-medium);
     line-height: var(--line-height-nav);
+}
+
+/* Logo — Zeyada 400 */
+.text-logo {
+    font-family: var(--font-logo);
+    font-size: var(--font-size-logo);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-logo);
 }

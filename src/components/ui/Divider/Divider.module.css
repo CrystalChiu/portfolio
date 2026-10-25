@@ -1,0 +1,5 @@
+.divider {
+    width: 100%;
+    border: none;
+    border-top: var(--line-weight) solid var(--color-divider);
+}

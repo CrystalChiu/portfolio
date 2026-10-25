@@ -8,7 +8,7 @@
 
   width: 100%;
   background-color: var(--color-bg);
-  border-bottom: 1px solid black;
+  border-bottom: var(--line-weight) double black;
 }
 
 .nav {
@@ -31,20 +31,13 @@
   flex-shrink: 0;
 }
 
-.portrait {
-  width: clamp(32px, 4vw, 54px);
-  height: auto;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .logo {
+  display: contents;
   color: var(--color-text-primary);
-  font-family: var(--font-display);
-  font-size: var(--font-size-heading-3);
+  font-family: var(--font-logo);
+  font-size: var(--font-size-logo);
   font-weight: var(--weight-regular);
-  line-height: var(--line-height-heading-3);
+  line-height: var(--line-height-logo);
   text-decoration: none;
 }
 

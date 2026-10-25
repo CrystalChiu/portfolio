@@ -10,9 +10,10 @@
     --color-text-tertiary: #BEBBBA;
     --color-border: #FDFBF9;
     --color-divider: #EBE9E5;
-    --color-primary: #5E7AE7;
+    --color-primary: #7C8FD9;
     --color-secondary: #6B5045;
     --color-accent-beige: #EEF1FC;
+    --color-accent-berry: #932A48;
     --color-accent-light-blue: #B9C4ED;
     --color-accent-dark-blue: #2F3C7E;
     --color-accent-light-brown: #4B3730;
@@ -21,6 +22,7 @@
     /* shared typography tokens */
     --font-display: "Instrument Serif", serif;
     --font-default: "IBM Plex Mono", monospace;
+    --font-logo: "Zeyada", cursive;
 
     --weight-regular: 400;
     --weight-medium: 500;
@@ -55,6 +57,9 @@
     --font-size-label: 14px;
     --font-size-nav: 14px;
 
+    /* logo */
+    --font-size-logo: clamp(24px, 2vw, 32px);
+
     /* line-heights (unitless, scale proportionally with font-size) */
     --line-height-display-1: 1.21;
     --line-height-display-2: 1.19;
@@ -72,6 +77,7 @@
     --line-height-caption: 1.43;
     --line-height-label: 1.43;
     --line-height-nav: 1.43;
+    --line-height-logo: 1.2;
 
     /* spacing tokens, 4px system */
     --space-4: 4px;
