@@ -11,10 +11,14 @@
     gap: var(--space-4);
 }
 
-.hero__name {
+.hero__introduction {
     display: flex;
     align-items: baseline;
     gap: var(--space-12);
+}
+
+.hero__name {
+    color: var(--color-accent-dark-blue);
 }
 
 .hero__description {
@@ -24,6 +28,10 @@
     margin-left: auto;
     max-width: 45%;
     gap: var(--space-4)
+}
+
+p {
+    color: var(--color-text-secondary);
 }
 
 @media (max-width: 720px) {

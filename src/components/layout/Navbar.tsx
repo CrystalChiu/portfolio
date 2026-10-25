@@ -2,6 +2,7 @@
 // other links are anchor links within home page
 import { useState } from "react";
 import styles from "./Navbar.module.css";
+import SeasonalPortrait from "../accents/SeasonalPortrait";
 
 const navItems = [
     { label: "Home", href: "#hero" },
@@ -20,12 +21,12 @@ export default function Navbar() {
     return (
         <header className={styles.header}>
             <nav className={styles.nav} aria-label="Main navigation">
-                <h2
-                    className={styles.logo}
-                    aria-label="Logo"
-                >
-                    Crystal Chiu
-                </h2>
+                <div className={styles.brand}>
+                    <SeasonalPortrait />
+                    <h2 className={styles.logo}>
+                        Crystal Chiu
+                    </h2>
+                </div>
 
                 <button
                     className={styles.menuToggle}

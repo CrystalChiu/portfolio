@@ -1,7 +1,6 @@
 import styles from "./Hero.module.css"
 import IconLabel from "../../ui/IconLabel";
-import { faMapPin } from "@fortawesome/free-solid-svg-icons";
-import { faFile } from "@fortawesome/free-regular-svg-icons";
+import { faMapPin, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faSquareLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Hero() {
@@ -9,9 +8,11 @@ export default function Hero() {
         <section id="hero" className={styles.content}>
             <div className={styles.hero__statement}>
                 <p>Hello, World.</p>
-                <div className={styles.hero__name}>
+                <div className={styles.hero__introduction}>
                     <h2 className="text-display-3">I'm</h2>
-                    <h1 className="text-display-2">Crystal</h1>
+                    <h1 className={`${styles.hero__name} text-display-2`}>
+                        Crystal
+                    </h1>
                 </div>
             </div>
 
