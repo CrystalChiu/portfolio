@@ -28,6 +28,11 @@
     list-style: none;
     display: inline-flex;
     flex-wrap: wrap;
-    gap: var(--space-8);
+    color: var(--color-text-tertiary);
+}
+
+.technologies__list_item:not(:last-child)::after {
+    content: "|";
+    padding: 0 var(--space-8);
     color: var(--color-text-tertiary);
 }
