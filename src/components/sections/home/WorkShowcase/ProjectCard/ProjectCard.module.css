@@ -24,6 +24,24 @@
     padding-top: var(--space-8);
 }
 
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+}
+
+.categories__tag {
+    border-radius: var(--corner-radius-sm);
+    /* border: var(--line-weight) solid var(--color-accent-dark-blue); */
+    background-color: var(--color-accent-light-blue);
+    padding: var(--space-4) var(--space-8);
+
+    font-size: var(--font-size-mono-s);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-mono-s);
+    color: var(--color-accent-dark-blue)
+}
+
 .technologies__list {
     list-style: none;
     display: inline-flex;

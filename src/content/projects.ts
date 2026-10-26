@@ -34,6 +34,6 @@ export const projects: Project[] = [
         description: "A placeholder project.",
         technologies: ["React", "TypeScript", "CSS"],
         categories: ["Full-Stack", "AI"],
-        publishedAt: "2026-10-25"
+        publishedAt: "2026-11-1"
     }
 ];

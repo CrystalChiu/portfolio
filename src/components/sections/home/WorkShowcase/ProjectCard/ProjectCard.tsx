@@ -26,20 +26,30 @@ export default function ProjectCard({
 
                 <div className={styles.metadata}>
                     <h3>{ project.title }</h3>
+            
+                    <ul className={styles.technologies__list}>
+                        {
+                            project.technologies.map((tech) => (
+                                <li 
+                                    key={tech}
+                                    className={`${styles.technologies__list_item} + text-mono-m`}
+                                >{tech}</li>
+                            ))
+                        }
+                    </ul>
+
+                    <div className={styles.categories}>
+                        {
+                            project.categories.map((category) => (
+                                <div key={category} className={styles.categories__tag}>{category}</div>
+                            ))
+                        }
+                    </div>
+
                     <p>{ project.description }</p>
+
                 </div>
             </Link>
-
-            <ul className={styles.technologies__list}>
-                {
-                    project.technologies.map((tech) => (
-                        <li 
-                            key={tech}
-                            className={styles.technologies__list_item}
-                        >{tech}</li>
-                    ))
-                }
-            </ul>
         </article>
     );
 }

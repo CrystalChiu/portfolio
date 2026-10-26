@@ -53,6 +53,7 @@
     min-width: 100%;
     z-index: 10;
     border: var(--line-weight) solid white;
+    padding: var(--space-4);
     background-color: var(--color-surface-elevated);
 }
 
@@ -67,6 +68,7 @@
 
 .content li {
     padding: var(--space-8) var(--space-12);
+    white-space: nowrap;
     color: var(--color-text-primary);
     font-family: var(--font-default);
     font-size: var(--font-size-body-s);
