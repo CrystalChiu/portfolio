@@ -1,15 +1,16 @@
 // hovering over work showcase navlink opens menu w/projects -> takes to project details page
 // other links are anchor links within home page
 import { useState } from "react";
+import { Link } from "react-router";
 import styles from "./Navbar.module.css";
 import SeasonalPortrait from "../accents/SeasonalPortrait";
 
 const navItems = [
-    { label: "Home", href: "#hero" },
-    { label: "About", href: "#about" },
-    { label: "Work Showcase", href: "#work" },
-    { label: "Experience", href: "#experience" },
-    { label: "Contact", href: "#contact" }
+    { label: "Home", to: "/#hero" },
+    { label: "About", to: "/#about" },
+    { label: "Work Showcase", to: "/#work" },
+    { label: "Experience", to: "/#experience" },
+    { label: "Contact", to: "/#contact" }
 ];
 
 export default function Navbar() {
@@ -46,10 +47,10 @@ export default function Navbar() {
                     }`}
                 >
                     {navItems.map((item) => (
-                        <li key={item.href}>
-                            <a href={item.href} onClick={closeMenu}>
+                        <li key={item.to}>
+                            <Link to={item.to} onClick={closeMenu}>
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

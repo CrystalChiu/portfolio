@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router";
 import PageLayout from "../components/layout/PageLayout";
 import Hero from "../components/sections/home/Hero/Hero";
 import About from "../components/sections/home/About/About";
@@ -6,6 +8,19 @@ import Experience from "../components/sections/home/Experience/Experience";
 import Contact from "../components/sections/home/Contact/Contact";
 
 export default function Home() {
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (!hash) return;
+
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [hash]);
+
     return (
         <main>
             <PageLayout>

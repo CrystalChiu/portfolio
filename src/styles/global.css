@@ -58,3 +58,8 @@ select {
     font: inherit;
     color: inherit;
 }
+
+/* Offset anchor scroll position so sections aren't hidden behind fixed navbar */
+section[id] {
+    scroll-margin-top: calc(var(--navbar-height) + var(--space-8));
+}
