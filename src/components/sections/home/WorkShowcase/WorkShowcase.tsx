@@ -1,7 +1,7 @@
 import styles from "./WorkShowcase.module.css";
 import Dropdown from "../../../ui/Dropdown/Dropdown";
 import ProjectCard from "./ProjectCard/ProjectCard";
-import { projects } from "../../../../content/projects";
+import { projects, PROJECT_CATEGORIES } from "../../../../content/projects";
 
 export default function WorkShowcase() {
     return (
@@ -14,9 +14,11 @@ export default function WorkShowcase() {
             <div className={styles.work__filters_bar}>                
                 <Dropdown label="Category">
                     <ul className={styles.work__filters_menu}>
-                        <li>Full-Stack</li>
-                        <li>Frontend</li>
-                        <li>Backend</li>
+                        {
+                            PROJECT_CATEGORIES.map((category) => (
+                                <li key={category}>{category}</li>
+                            ))
+                        }
                     </ul>
                 </Dropdown>
 
