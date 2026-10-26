@@ -51,7 +51,7 @@
 }
 
 .links a {
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   font-family: var(--font-default);
   font-size: var(--font-size-nav);
   font-weight: var(--weight-regular);

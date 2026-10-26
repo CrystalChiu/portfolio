@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: var(--space-12);
     padding: var(--space-16);
-    border: var(--line-weight) solid var(--color-text-secondary);
+    border: var(--line-weight) solid var(--color-border);
     border-radius: var(--corner-radius-md);
     background-color: var(--color-surface);
 }
@@ -28,8 +28,9 @@
 .item {
     padding: var(--space-4) var(--space-12);
     border-radius: var(--corner-radius-sm);
-    background-color: var(--color-accent-berry);
-    color: white;
+    background-color: var(--color-accent-light-blue);
+    color: var(--color-accent-dark-blue);
+    border: var(--line-weight) solid var(--color-accent-dark-blue);
     font-family: var(--font-default);
     font-size: var(--font-size-mono-s);
     font-weight: var(--weight-medium);

@@ -7,7 +7,8 @@ import SeasonalPortrait from "../accents/SeasonalPortrait";
 const navItems = [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
-    { label: "Work Experience", href: "#experience" },
+    { label: "Work Showcase", href: "#work" },
+    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" }
 ];
 

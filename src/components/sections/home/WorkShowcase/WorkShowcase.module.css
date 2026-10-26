@@ -11,4 +11,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    gap: var(--space-8);
+}
+
+.work__filters_bar {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: var(--line-weight) solid var(--color-text-secondary);
+}
+
+.work__project_cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-16);
+}
+
+@media (max-width: 720px) {
+    .work__project_cards {
+        grid-template-columns: 1fr;
+    }
+
+    .work__filters_bar {
+        display: block;
+    }
 }

@@ -11,14 +11,14 @@ export default function Hero() {
                 <div className={styles.hero__introduction}>
                     <h2 className="text-display-3">I'm</h2>
                     <h1 className={`${styles.hero__name} text-display-2`}>
-                        Crystal
+                        Crystal.
                     </h1>
                 </div>
             </div>
 
             <div className={styles.hero__description}>
                 <h1 className="text-display-1">
-                    Software Engineer with really good taste.
+                    Software Engineer, with really good taste.
                 </h1>
                 <p>
                     I’m looking to become an expert at engineering technically complex, joyful, and humanistic digital experiences.
