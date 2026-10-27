@@ -1,4 +1,3 @@
-// imports navbar and footer
 import type { ReactNode } from "react";
 import styles from "./PageLayout.module.css";
 

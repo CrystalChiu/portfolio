@@ -6,13 +6,13 @@ import { aboutContent } from "../../../../content/about"
 export default function About() {
     return (
         <section id="about" className={styles.content}>
-            <h2 className="text-display-2">About Me</h2>
+            <h2 className="text-display-1">About Me</h2>
 
             <div className={styles.about_content}>
                 <div className={styles.about__credentials}>
                     {aboutContent.credentials.map((credential) => (
                         <div key={credential.title} className={styles.credential}>
-                            <h3 className="text-heading-4">{credential.title}</h3>
+                            <h3 className="text-heading-3">{credential.title}</h3>
                             <div className={styles.credential__details}>
                                 <p className="text-mono-s">{credential.date}</p>
                                 <p className="text-mono-m">{credential.degree}</p>

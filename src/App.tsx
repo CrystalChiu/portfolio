@@ -1,8 +1,10 @@
 import { Routes, Route } from "react-router";
 
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer/Footer";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
+import Credits from "./pages/Credits";
 
 export default function App() {
   return (
@@ -18,7 +20,13 @@ export default function App() {
           path="/projects/:slug" 
           element={<ProjectDetails />}
         />
+        <Route 
+          path="/credits" 
+          element={<Credits />} 
+        />
       </Routes>
+
+      <Footer />
     </>
   );
 }

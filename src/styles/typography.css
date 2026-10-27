@@ -221,3 +221,16 @@
     font-weight: var(--weight-regular);
     line-height: var(--line-height-logo);
 }
+
+/* Granular styling classes */
+.text-primary {
+    color: var(--color-text-primary);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+    color: var(--color-text-tertiary);
+}

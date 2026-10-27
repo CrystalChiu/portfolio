@@ -47,7 +47,6 @@ export default function ProjectCard({
                     </div>
 
                     <p>{ project.description }</p>
-
                 </div>
             </Link>
         </article>

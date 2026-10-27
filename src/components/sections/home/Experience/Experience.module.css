@@ -1,0 +1,24 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+    padding: var(--space-32) 0 0 0;
+}
+
+.experience__timeline {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-24);
+}
+
+.experience__timeline__entries {
+    display: grid;
+    row-gap: var(--space-32);
+    padding: var(--space-24) 0;
+}
+
+/* Extend the coil line through Experience's bottom padding
+   so it connects seamlessly with the Contact section's line */
+.experience__timeline .coil::before {
+    bottom: calc(-1 * var(--space-32));
+}

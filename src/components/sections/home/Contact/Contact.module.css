@@ -1,0 +1,91 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+}
+
+.contact__heading {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: var(--space-32);
+}
+
+.contact__heading__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    gap: 1px;
+    height: 100%;
+    align-self: start;
+}
+
+.contact__heading__phone_img {
+    max-width: 32px;
+}
+
+.contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-24);
+    text-align: center;
+}
+
+.contact__content__intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.contact__content__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-24);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact__content__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+
+    color: var(--color-text-primary);
+    text-decoration: none;
+
+    transition: color 160ms ease;
+}
+
+.contact__content__links a:hover,
+.contact__content__links a:focus-visible {
+    color: var(--color-primary);
+}
+
+.contact__content__links a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.contact__closing {
+    max-width: 60ch;
+    margin-inline: auto;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.contact__signoff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    font-family: var(--font-logo);
+}
+
+.contact__signoff__name {
+    font-family: var(--font-logo);
+    font-size: var(--font-size-display-4);
+    color: var(--color-accent-dark-blue);
+}

@@ -1,0 +1,44 @@
+.coil {
+    position: relative;
+    padding-left: 40px;
+}
+
+.coil::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+
+    background-color: var(--color-text-primary);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath d='M 12 0 C 16 0 16 6 12 6 C 8 6 8 12 12 12' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath d='M 12 0 C 16 0 16 6 12 6 C 8 6 8 12 12 12' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: repeat-y;
+    mask-repeat: repeat-y;
+    -webkit-mask-size: 24px 12px;
+    mask-size: 24px 12px;
+    -webkit-mask-position: top center;
+    mask-position: top center;
+
+    pointer-events: none;
+}
+
+/* Straight line — same horizontal alignment as the coil's wave center */
+.line {
+    position: relative;
+    padding-left: 40px;
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+
+    background-color: var(--color-text-primary);
+
+    pointer-events: none;
+}
