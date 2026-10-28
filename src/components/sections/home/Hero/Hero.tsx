@@ -98,8 +98,12 @@ export default function Hero() {
                     className={styles.hero__links}
                     aria-label="Professional Links"
                 >
-                    {/* Update with real resume later */}
-                    <a href="/files/crystal-chiu-resume.pdf"> 
+                    <a
+                        href="/files/Crystal_Chiu_Resume.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Open resume preview in a new tab"
+                    >
                         <IconLabel icon={faFile} label="Resume" /> 
                     </a> 
                     <a 
@@ -118,6 +122,7 @@ export default function Hero() {
                     </a>
                 </div>
             </motion.div>
+
         </motion.section>
     );
 }
