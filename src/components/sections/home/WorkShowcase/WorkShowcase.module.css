@@ -66,6 +66,32 @@
     gap: var(--space-16);
 }
 
+.view_all {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin-inline: auto;
+
+    color: var(--color-text-secondary);
+    font-family: var(--font-default);
+    font-size: var(--font-size-mono-m);
+    line-height: var(--line-height-mono-m);
+    text-decoration: none;
+
+    transition: color 160ms ease;
+}
+
+.view_all:hover,
+.view_all:focus-visible {
+    color: var(--color-primary);
+}
+
+.view_all:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 @media (max-width: 720px) {
     .work__project_cards {
         grid-template-columns: 1fr;

@@ -1,48 +1,35 @@
-import { useState } from "react";
+import { Link } from "react-router";
 import styles from "./WorkShowcase.module.css";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import IconLabel from "../../../ui/IconLabel/IconLabel";
 import Dropdown from "../../../ui/Dropdown/Dropdown";
 import MultiselectDropdown from "../../../ui/MultiselectDropdown/MultiselectDropdown";
 import ProjectCard from "./ProjectCard/ProjectCard";
-import { projects, PROJECT_CATEGORIES } from "../../../../content/projects";
-import type { ProjectCategory } from "../../../../content/projects";
+import { PROJECT_CATEGORIES } from "../../../../content/projects";
+import { useProjectFilters } from "../../../../hooks/useProjectFilters";
 
 export default function WorkShowcase() {
-    // Determine the set of visible projects and their ordering
-    const [selectedCategories, setSelectedCategories] = useState<readonly ProjectCategory[]>([]);
-    const [sortBy, setSortBy] = useState<"publishedAt" | "title">("publishedAt");
-    const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
-
-    const hasActiveFilters =
-        selectedCategories.length > 0 ||
-        sortBy !== "publishedAt" ||
-        sortDirection !== "desc";
-
-    function resetFilters() {
-        setSelectedCategories([]);
-        setSortBy("publishedAt");
-        setSortDirection("desc");
-    }
-
-    const visibleProjects = [...projects].filter((project) => (
-        // Filter
-        selectedCategories.length === 0 || 
-        selectedCategories.some(category => project.categories.includes(category))
-    ))
-    .sort((a, b) => {
-        const comparison = sortBy === "title"
-            ? a.title.localeCompare(b.title)
-            : a.publishedAt.localeCompare(b.publishedAt);
-
-        return sortDirection === "asc"
-            ? comparison
-            : -comparison;
-    });
+    const {
+        selectedCategories,
+        setSelectedCategories,
+        sortBy,
+        setSortBy,
+        sortDirection,
+        setSortDirection,
+        hasActiveFilters,
+        resetFilters,
+        visibleProjects,
+    } = useProjectFilters();
 
     return (
         <section id="work" className={styles.content}>
             <div className={styles.work__intro}>
                 <h2 className="text-display-1">Work Showcase</h2>
-                <p>A collection of projects that showcase my approach to software engineering, design, and problem-solving. Select a project to explore its story, technical implementation, and the decisions behind it.</p>
+
+                <div>
+                    <p>A collection of projects that showcase my approach to software engineering, design, and problem-solving.</p>
+                    <p>Select a project to explore its story, technical implementation, and the decisions behind it.</p>
+                </div>
             </div>
 
             <div className={styles.work__filters_bar}>                
@@ -117,6 +104,14 @@ export default function WorkShowcase() {
                     ))
                 }
             </div>
+
+            <Link to="/projects" className={styles.view_all}>
+                <IconLabel 
+                    icon={faArrowRight} 
+                    label="See More" 
+                    iconPosition="right" 
+                />
+            </Link>
         </section>
     )
 }

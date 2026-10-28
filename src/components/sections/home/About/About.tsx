@@ -6,9 +6,23 @@ import { aboutContent } from "../../../../content/about"
 export default function About() {
     return (
         <section id="about" className={styles.content}>
-            <h2 className="text-display-1">About Me</h2>
-
             <div className={styles.about_content}>
+                {/* My Story */}
+                <div className={styles.about__bio}>
+                    <h2 className="text-display-2-italic">My Story</h2>
+
+                    <div className={styles.about__bio_content}>
+                        {
+                            aboutContent.bio.split("\n\n").map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <Divider />
+
+                {/* Credentials List */}
                 <div className={styles.about__credentials}>
                     {aboutContent.credentials.map((credential) => (
                         <div key={credential.title} className={styles.credential}>
@@ -22,31 +36,25 @@ export default function About() {
                     ))}
                 </div>
 
-                <div className={styles.about__bio}>
-                    <h1>My Story</h1>
-                    <p>{aboutContent.bio}</p>
+                <div className={styles.about__skills}>
+                    <h2>Skills & Technologies</h2>
+                    <div className={styles.skills__grid}>
+                        {aboutContent.skillGroups.map((group) => (
+                            <SkillsCard
+                                key={group.title}
+                                title={group.title}
+                                skills={group.skills}
+                            />
+                        ))}
+                    </div>
                 </div>
 
-                <div className={styles.about__tldr}>
-                    <strong className="text-display-4-italic">All in all...</strong>
+                {/* <div className={styles.about__tldr}>
+                    <strong className="text-display-4-italic">All in all,</strong>
                     <p className="text-subheading">{aboutContent.tldr}</p>
-                </div>
+                </div> */}
             </div>
 
-            <Divider />
-
-            <div className={styles.about__skills}>
-                <h2>Skills & Technologies</h2>
-                <div className={styles.skills__grid}>
-                    {aboutContent.skillGroups.map((group) => (
-                        <SkillsCard
-                            key={group.title}
-                            title={group.title}
-                            skills={group.skills}
-                        />
-                    ))}
-                </div>
-            </div>
         </section>
     )
 }

@@ -76,7 +76,7 @@
     text-align: center;
 }
 
-.contact__signoff {
+.contact__signature {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,8 +84,13 @@
     font-family: var(--font-logo);
 }
 
-.contact__signoff__name {
+.contact__signature__signoff {
+    font-weight: var(--weight-regular);
+}
+
+.contact__signature__name {
     font-family: var(--font-logo);
-    font-size: var(--font-size-display-4);
+    /* font-size: var(--font-size-display-4); */
     color: var(--color-accent-dark-blue);
+    font-weight: var(--weight-regular);
 }

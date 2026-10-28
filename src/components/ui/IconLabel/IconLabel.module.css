@@ -5,3 +5,7 @@
     align-items: center;
     gap: var(--space-8);
 }
+
+.iconRight {
+    flex-direction: row-reverse;
+}

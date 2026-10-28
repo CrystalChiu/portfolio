@@ -18,10 +18,21 @@
 .about__bio {
     display: inherit;
     flex-direction: inherit;
-    gap: var(--space-8);
+    gap: var(--space-12);
+    margin: auto;
+    text-align: center;
+
+    /* background-color: var(--color-accent-light-blue);
+    padding: var(--space-16);
+    border: var(--line-weight) solid var(--color-border);
+    border-radius: var(--corner-radius-md) */
+}
+
+.about__bio_content {
+    display: inherit;
+    flex-direction: inherit;
+    gap: var(--space-16);
     max-width: 85ch;
-    margin-left: auto;
-    text-align: end;
 }
 
 .about__tldr {
@@ -31,8 +42,9 @@
     flex-direction: column;
     gap: var(--space-12);
     justify-content: center;
-    align-items: start;
-    text-align: start;
+
+    align-items: center;
+    text-align: center;
 }
 
 .credential {
@@ -51,7 +63,7 @@
 .about__skills {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: start;
     gap: var(--space-12);
 }
 

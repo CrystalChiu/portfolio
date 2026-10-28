@@ -3,6 +3,7 @@
 :root {
     /* color tokens */
     --color-bg: #FAFAFD;
+    --color-bg-dark: #232323;
     --color-surface: #FFFFFF;
     --color-surface-elevated: #FFFEFE;
     --color-surface-hover: #F5EEE8;

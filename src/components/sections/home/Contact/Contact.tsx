@@ -25,10 +25,10 @@ export default function Contact() {
 
             <div className={styles.contact__content}>
                 <div className={styles.contact__content__intro}>
-                    <h3>
+                    <p>
                         Have a question, opportunity, or just want to connect?
-                    </h3>
-                    <p className="text-secondary">Reach me here</p>
+                    </p>
+                    <p className="text-secondary text-body-s">Reach me here:</p>
                 </div>
 
                 <ul className={styles.contact__content__links}>
@@ -77,14 +77,12 @@ export default function Contact() {
             <Divider />
 
             <p className={styles.contact__closing}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
+                That's all for now! Back to making the internet a little more interesting. See you again soon.
             </p>
 
-            <div className={styles.contact__signoff}>
-                <h2>Sincerely,</h2>
-                <h2 className={styles.contact__signoff__name}>Crystal Chiu</h2>
+            <div className={styles.contact__signature}>
+                <h2 className={styles.contact__signature__signoff}>Always,</h2>
+                <h1 className={styles.contact__signature__name}>Crystal Chiu</h1>
             </div>
         </section>
     );

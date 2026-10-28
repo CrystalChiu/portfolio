@@ -26,7 +26,7 @@ export const aboutContent: AboutContent = {
             institution: "University of California, Irvine",
         },
     ],
-    bio: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.",
+    bio: "Before computer science, there was art. I spent years exploring traditional painting and digital art. When I discovered programming in high school, I recognized it as another outlet for creative expression that also satisfied my desire for creating practical solutions. I've always seen software engineering as a form of digital craftsmanship, from the systems and databases beneath an application to the countless engineering decisions that shape how it works. \n\nThat perspective continues to shape how I approach my work. I'm drawn to the technical puzzles behind complex systems, the thoughtfulness required to build them well and maintain them, and the people who ultimately use what I create. I hope to keep expanding my craft by learning from teams who manage larger, more complex systems and growing into an engineer who brings technical rigor, creativity, and user empathy to every project.",
     tldr: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
     skillGroups: [
         {

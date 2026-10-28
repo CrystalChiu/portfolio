@@ -234,3 +234,15 @@
 .text-tertiary {
     color: var(--color-text-tertiary);
 }
+
+.weight-1 {
+    font-weight: var(--weight-regular);
+}
+
+.weight-2 {
+    font-weight: var(--weight-medium);
+}
+
+.weight-3 {
+    font-weight: var(--weight-semibold);
+}
