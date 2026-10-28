@@ -6,9 +6,9 @@
     max-width: 80%;
 }
 
-.entry:hover {
+/* .entry:hover {
     background-color: var(--color-surface-hover);
-}
+} */
 
 .entry__dates {
     color: var(--color-text-tertiary);

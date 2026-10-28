@@ -3,6 +3,11 @@
     flex-direction: column;
 }
 
+.card:hover,
+.card:focus-within {
+    z-index: 1;
+}
+
 .link {
     display: flex;
     flex-direction: column;

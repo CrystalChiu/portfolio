@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { motion, useReducedMotion } from "motion/react";
 import type { Project } from "../../../../../content/projects";
 import { PROJECT_IMGS_PATH } from "../../../../../content/projects";
 import styles from "./ProjectCard.module.css";
@@ -18,10 +19,14 @@ export default function ProjectCard({
                 to={`/projects/${project.slug}`}
                 className={styles.link}
             >
-                <img
+                <motion.img
                     src={coverSrc}
                     alt={`${project.title} — project preview`}
                     className={styles.cover}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 />
 
                 <div className={styles.metadata}>

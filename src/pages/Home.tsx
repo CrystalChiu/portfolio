@@ -6,6 +6,7 @@ import About from "../components/sections/home/About/About";
 import WorkShowcase from "../components/sections/home/WorkShowcase/WorkShowcase";
 import Experience from "../components/sections/home/Experience/Experience";
 import Contact from "../components/sections/home/Contact/Contact";
+import FadeIn from "../components/ui/FadeIn/FadeIn";
 
 export default function Home() {
     const { hash } = useLocation();
@@ -25,10 +26,18 @@ export default function Home() {
         <main>
             <PageLayout>
                 <Hero />
-                <About />
-                <WorkShowcase />
-                <Experience />
-                <Contact />
+                <FadeIn>
+                    <About />
+                </FadeIn>
+                <FadeIn>
+                    <WorkShowcase />
+                </FadeIn>
+                <FadeIn>
+                    <Experience />
+                </FadeIn>
+                <FadeIn>
+                    <Contact />
+                </FadeIn>
             </PageLayout>
         </main>
     );

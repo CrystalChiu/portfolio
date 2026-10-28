@@ -22,6 +22,19 @@
     mask-position: top center;
 
     pointer-events: none;
+
+    animation: coilFlow 7s linear infinite;
+}
+
+@keyframes coilFlow {
+    from {
+        mask-position: center 0px;
+        -webkit-mask-position: center 0px;
+    }
+    to {
+        mask-position: center 12px;
+        -webkit-mask-position: center 12px;
+    }
 }
 
 /* Straight line — same horizontal alignment as the coil's wave center */
@@ -41,4 +54,10 @@
     background-color: var(--color-text-primary);
 
     pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .coil::before {
+        animation: none;
+    }
 }

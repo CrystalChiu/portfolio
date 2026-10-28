@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import styles from "./Hero.module.css"
 import IconLabel from "../../../ui/IconLabel/IconLabel";
 import { faMapPin, faFile } from "@fortawesome/free-solid-svg-icons";
@@ -5,8 +6,26 @@ import { faSquareLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Hero() {
     return (
-        <section id="hero" className={styles.content}>
-            <div className={styles.hero__statement}>
+        <motion.section
+            id="hero"
+            className={styles.content}
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.3 } },
+            }}
+        >
+            <motion.div
+                className={styles.hero__statement}
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                        opacity: 1,
+                        transition: { duration: 0.9, ease: [0.3, 1, 0.4, 1] },
+                    },
+                }}
+            >
                 <p>Hello, World.</p>
                 <div className={styles.hero__introduction}>
                     <h2 className="text-display-3">I'm</h2>
@@ -14,18 +33,36 @@ export default function Hero() {
                         Crystal.
                     </h1>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className={styles.hero__description}>
+            <motion.div
+                className={styles.hero__description}
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                        opacity: 1,
+                        transition: { duration: 0.9, ease: [0.3, 1, 0.4, 1] },
+                    },
+                }}
+            >
                 <h1 className="text-display-1">
                     Software Engineer, with really good taste.
                 </h1>
                 <p>
                     I’m looking to become an expert at engineering technically complex, joyful, and humanistic digital experiences.
                 </p>
-            </div>
+            </motion.div>
             
-            <div className={styles.hero__details}>
+            <motion.div
+                className={styles.hero__details}
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                        opacity: 1,
+                        transition: { duration: 0.9, ease: [0.3, 1, 0.4, 1] },
+                    },
+                }}
+            >
                 <div className={styles.hero__location}>
                     <IconLabel icon={faMapPin} label="Orange, CA" />
                 </div>
@@ -52,7 +89,7 @@ export default function Hero() {
                         <IconLabel icon={faSquareLinkedin} label="LinkedIn" /> 
                     </a>
                 </div>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 }

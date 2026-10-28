@@ -8,6 +8,8 @@ import { useProjectFilters } from "../hooks/useProjectFilters";
 import styles from "../components/sections/home/WorkShowcase/WorkShowcase.module.css";
 import IconLabel from "../components/ui/IconLabel/IconLabel";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Divider from "../components/ui/Divider/Divider";
+import pageStyles from "./Projects.module.css";
 
 export default function Projects() {
     const {
@@ -26,19 +28,25 @@ export default function Projects() {
         <main>
             <PageLayout>
                 <section className={styles.content}>
-                    <div className={styles.work__intro}>
-                        <h2 className="text-display-1">My Projects</h2>
-                        <p>
-                            Click each card to learn more about its development process.
-                        </p>
-                        <p className="text-tertiary">
-                            WIP: More coming soon!
-                        </p>
-                    </div>
+                    <div className={pageStyles.content__heading}>
+                        <div className={pageStyles.content__heading__group}>
+                            <div className={styles.work__intro}>
+                                <h2 className="text-display-1">My Works</h2>
+                                <p>
+                                    Click each card to learn more about its development process.
+                                </p>
+                                <p className="text-tertiary">
+                                    WIP: More coming soon!
+                                </p>
+                            </div>
 
-                    <Link to="/#work" className={styles.view_all}>
-                        <IconLabel icon={faArrowLeft} label="Back to Home" />
-                    </Link>
+                            <Divider />
+                        </div>
+
+                        <Link to="/#work" className={styles.view_all}>
+                            <IconLabel icon={faArrowLeft} label="Back to Home" />
+                        </Link>
+                    </div>
 
                     <div className={styles.work__filters_bar}>
                         <MultiselectDropdown

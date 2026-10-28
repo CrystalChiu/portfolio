@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router";
+import { MotionConfig } from "motion/react";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer/Footer";
@@ -9,7 +10,7 @@ import Projects from "./pages/Projects";
 
 export default function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Navbar />
 
       <Routes>
@@ -32,6 +33,6 @@ export default function App() {
       </Routes>
 
       <Footer />
-    </>
+    </MotionConfig>
   );
 }

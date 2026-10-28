@@ -7,6 +7,7 @@ import MultiselectDropdown from "../../../ui/MultiselectDropdown/MultiselectDrop
 import ProjectCard from "./ProjectCard/ProjectCard";
 import { PROJECT_CATEGORIES } from "../../../../content/projects";
 import { useProjectFilters } from "../../../../hooks/useProjectFilters";
+import Divider from "../../../ui/Divider/Divider";
 
 export default function WorkShowcase() {
     const {
@@ -104,6 +105,8 @@ export default function WorkShowcase() {
                     ))
                 }
             </div>
+
+            <Divider />
 
             <Link to="/projects" className={styles.view_all}>
                 <IconLabel 
