@@ -3,13 +3,13 @@
     flex-direction: column;
     gap: var(--space-12);
     padding: var(--space-16);
-    /* border: var(--line-weight) solid var(--color-border); */
+    border: var(--line-weight) solid var(--color-border);
     border-radius: var(--corner-radius-sm);
-    background-color: var(--color-accent-dark-brown);
+    background-color: var(--color-surface-elevated);
 }
 
 .title {
-    color: white;
+    color: var(--color-text-primary);
     font-family: var(--font-default);
     font-size: var(--font-size-heading-4);
     font-weight: var(--weight-semibold);

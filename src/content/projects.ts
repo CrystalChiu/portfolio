@@ -20,20 +20,20 @@ export type Project = {
 }
 
 export const projects: Project[] = [
-    {
-        slug: "example",
-        title: "Example Project",
-        description: "A placeholder project.",
-        technologies: ["React", "TypeScript", "CSS"],
-        categories: ["Full-Stack", "DevOps", "Cloud"],
-        publishedAt: "2026-10-25"
-    },
-    {
-        slug: "example-2",
-        title: "Example 2 Project",
-        description: "A placeholder project.",
-        technologies: ["React", "TypeScript", "CSS"],
-        categories: ["Full-Stack", "AI"],
-        publishedAt: "2026-11-1"
-    }
+    // {
+    //     slug: "example",
+    //     title: "Example Project",
+    //     description: "A placeholder project.",
+    //     technologies: ["React", "TypeScript", "CSS"],
+    //     categories: ["Full-Stack", "DevOps", "Cloud"],
+    //     publishedAt: "2026-10-25"
+    // },
+    // {
+    //     slug: "example-2",
+    //     title: "Example 2 Project",
+    //     description: "A placeholder project.",
+    //     technologies: ["React", "TypeScript", "CSS"],
+    //     categories: ["Full-Stack", "AI"],
+    //     publishedAt: "2026-11-1"
+    // }
 ];

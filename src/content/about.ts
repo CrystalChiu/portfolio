@@ -31,15 +31,15 @@ export const aboutContent: AboutContent = {
     skillGroups: [
         {
             title: "Languages",
-            skills: ["TypeScript", "JavaScript", "Python", "SQL"],
+            skills: ["TypeScript", "JavaScript", "Java", "PHP", "SQL", "C++", "Python"],
         },
         {
             title: "Frameworks & Libraries",
-            skills: ["React", "Node.js", "Next.js"],
+            skills: ["React.js", "React Native", "Vue.js", "Node.js", "Next.js", "Laravel", "Flask"],
         },
         {
             title: "Tools & Platforms",
-            skills: ["Git", "Docker", "AWS", "Vite"],
+            skills: ["Git", "Docker", "AWS", "Terraform"],
         },
     ],
 };

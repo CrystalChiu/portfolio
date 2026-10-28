@@ -5,6 +5,12 @@
     padding: var(--space-32) 0;
 }
 
+.work__wip_message {
+    font-style: italic;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
 .work__intro {
     width: 100%;
     display: flex;
@@ -78,6 +84,7 @@
     font-size: var(--font-size-mono-m);
     line-height: var(--line-height-mono-m);
     text-decoration: none;
+    margin-top: var(--space-16);
 
     transition: color 160ms ease;
 }

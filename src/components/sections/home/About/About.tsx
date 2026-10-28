@@ -2,10 +2,16 @@ import styles from "./About.module.css"
 import Divider from "../../../ui/Divider/Divider"
 import { SkillsCard } from "./SkillsCard/SkillsCard"
 import { aboutContent } from "../../../../content/about"
+import { Link } from "react-router";
+import IconLabel from "../../../ui/IconLabel/IconLabel";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function About() {
     return (
         <section id="about" className={styles.content}>
+            <Divider />
+            
             <div className={styles.about_content}>
                 {/* My Story */}
                 <div className={styles.about__bio}>
@@ -46,6 +52,18 @@ export default function About() {
                                 skills={group.skills}
                             />
                         ))}
+                    </div>
+                    <div className={styles["about__skills-outro"]}>
+                        <p>
+                            Don't see exactly what you're looking for? I learn fast.
+                        </p>
+                        <Link to="/#contact" className={styles["about__skills-contact"]}>
+                            <IconLabel 
+                                icon={faChevronDown} 
+                                label="Ask me more"
+                                iconPosition="right"
+                            />
+                        </Link>
                     </div>
                 </div>
 

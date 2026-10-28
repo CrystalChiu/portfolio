@@ -1,13 +1,13 @@
-import { Link } from "react-router";
 import styles from "./WorkShowcase.module.css";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import IconLabel from "../../../ui/IconLabel/IconLabel";
 import Dropdown from "../../../ui/Dropdown/Dropdown";
 import MultiselectDropdown from "../../../ui/MultiselectDropdown/MultiselectDropdown";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import { PROJECT_CATEGORIES } from "../../../../content/projects";
 import { useProjectFilters } from "../../../../hooks/useProjectFilters";
-import Divider from "../../../ui/Divider/Divider";
+// Uncomment after projects added in
+// import { Link } from "react-router";
+// import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+// import IconLabel from "../../../ui/IconLabel/IconLabel";
 
 export default function WorkShowcase() {
     const {
@@ -95,6 +95,8 @@ export default function WorkShowcase() {
                 )}
             </div>
 
+            <p className={styles.work__wip_message}>Projects currently being curated. Check back again soon!</p>
+
             <div className={styles.work__project_cards}>
                 { 
                     visibleProjects.map((project) => (
@@ -106,15 +108,13 @@ export default function WorkShowcase() {
                 }
             </div>
 
-            <Divider />
-
-            <Link to="/projects" className={styles.view_all}>
+            {/* <Link to="/projects" className={styles.view_all}>
                 <IconLabel 
                     icon={faArrowRight} 
                     label="See More" 
                     iconPosition="right" 
                 />
-            </Link>
+            </Link> */}
         </section>
     )
 }

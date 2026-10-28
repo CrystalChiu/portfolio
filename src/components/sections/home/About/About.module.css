@@ -67,6 +67,25 @@
     gap: var(--space-12);
 }
 
+.about__skills-outro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.about__skills-contact {
+    color: inherit;
+    transition: color 150ms ease;
+}
+
+.about__skills-contact:hover {
+    color: var(--color-text-primary);
+}
+
 .skills__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
