@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import type { Project } from "../../../../../content/projects";
 import { PROJECT_IMGS_PATH } from "../../../../../content/projects";
 import styles from "./ProjectCard.module.css";
