@@ -29,7 +29,7 @@ export default function Hero() {
             >
                 <p className="text-subheading">
                     {""}
-                    <ReactTyped strings={["Hello, World"]} typeSpeed={150} />
+                    <ReactTyped strings={["Hello, World"]} typeSpeed={115} />
                 </p>
 
                 <div className={styles.hero__introduction}>

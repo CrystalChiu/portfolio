@@ -9,11 +9,14 @@ import { faChevronDown, faHighlighter } from "@fortawesome/free-solid-svg-icons"
 import { TextHighlighter } from "../../../fancy/text/text-highlighter";
 
 const highlightedBioPhrases = new Set([
-    "Before computer science, there was art",
-    "creative expression",
+    "outlet for creative expression",
+    "desire for creating practical solutions",
     "digital craftsmanship",
+    "how I approach my work",
     "learning from teams who manage larger, more complex systems",
-    "technical rigor, creativity, and user empathy",
+    "technical rigor", 
+    "creativity",
+    "user empathy",
 ]);
 
 const bioHighlightPattern = new RegExp(
