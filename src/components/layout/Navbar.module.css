@@ -84,13 +84,23 @@
 
 .menuToggle {
   display: none;
-  padding: var(--space-8) var(--space-12);
-  border: 1px solid var(--color-divider);
-  border-radius: 4px;
-  background: var(--color-surface);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   color: var(--color-text-primary);
-  font: inherit;
+  font-size: 14px;
   cursor: pointer;
+  transition: transform 180ms ease, color 160ms ease;
+}
+
+.menuToggle:hover {
+  color: var(--color-primary);
+}
+
+.menuToggleOpen {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 720px) {
@@ -103,8 +113,6 @@
 
   .menuToggle {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .links {

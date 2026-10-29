@@ -8,23 +8,29 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function About() {
+    const scrollToContact = () => {
+        document
+            .getElementById("contact")
+            ?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <section id="about" className={styles.content}>
             <Divider />
             
             <div className={styles.about_content}>
                 {/* My Story */}
-                <div className={styles.about__bio}>
-                    <h2 className="text-display-2-italic">My Story</h2>
+                    <div className={styles.about__bio}>
+                        <h2 className="text-display-2-italic">My Story</h2>
 
-                    <div className={styles.about__bio_content}>
-                        {
-                            aboutContent.bio.split("\n\n").map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
-                            ))
-                        }
+                        <div className={styles.about__bio_content}>
+                            {
+                                aboutContent.bio.split("\n\n").map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))
+                            }
+                        </div>
                     </div>
-                </div>
 
                 <Divider />
 
@@ -57,7 +63,11 @@ export default function About() {
                         <p>
                             Don't see exactly what you're looking for? I learn fast.
                         </p>
-                        <Link to="/#contact" className={styles["about__skills-contact"]}>
+                        <Link
+                            to="/#contact"
+                            className={styles["about__skills-contact"]}
+                            onClick={scrollToContact}
+                        >
                             <IconLabel 
                                 icon={faChevronDown} 
                                 label="Ask me more"

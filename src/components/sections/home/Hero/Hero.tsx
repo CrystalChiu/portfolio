@@ -73,7 +73,7 @@ export default function Hero() {
                     }}
                 >
                     <h1 className="text-display-1">
-                        Software Engineer, with really good taste.
+                        Software Engineer with really good taste.
                     </h1>
                     <p>
                         I’m looking to become an expert at engineering technically complex, joyful, and humanistic digital experiences.

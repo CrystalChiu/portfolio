@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import styles from "./Navbar.module.css";
 import SeasonalPortrait from "../accents/SeasonalPortrait";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const DESKTOP_NAVBAR_HEIGHT = 72;
 
@@ -18,7 +20,7 @@ const navItems = [
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isPastHero, setIsPastHero] = useState(false);
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
         function updateNavbarState() {
@@ -49,6 +51,18 @@ export default function Navbar() {
         setMenuOpen(false);
     }
 
+    function handleNavLinkClick(to: string) {
+        const targetHash = to.slice(to.indexOf("#"));
+
+        if (pathname === "/" && hash === targetHash) {
+            document
+                .getElementById(targetHash.replace("#", ""))
+                ?.scrollIntoView({ behavior: "smooth" });
+        }
+
+        closeMenu();
+    }
+
     return (
         <header
             className={`${styles.header} ${
@@ -69,13 +83,16 @@ export default function Navbar() {
                 </div>
 
                 <button
-                    className={styles.menuToggle}
+                    className={`${styles.menuToggle} ${
+                        menuOpen ? styles.menuToggleOpen : ""
+                    }`}
                     type="button"
-                    aria-label={menuOpen ? "Close menu" : "Open Menu"}
+                    aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={menuOpen}
                     aria-controls="primary-navigation"
                     onClick={() => setMenuOpen((open) => !open)}
                 >
-                    {menuOpen ? "Close" : "Open"}
+                    <FontAwesomeIcon icon={faChevronDown} aria-hidden="true" />
                 </button>
 
                 <ul
@@ -86,7 +103,10 @@ export default function Navbar() {
                 >
                     {navItems.map((item) => (
                         <li key={item.to}>
-                            <Link to={item.to} onClick={closeMenu}>
+                            <Link
+                                to={item.to}
+                                onClick={() => handleNavLinkClick(item.to)}
+                            >
                                 {item.label}
                             </Link>
                         </li>

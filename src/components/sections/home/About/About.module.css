@@ -17,7 +17,7 @@
 
 .about__bio {
     display: inherit;
-    flex-direction: inherit;
+    flex-direction: column;
     gap: var(--space-12);
     margin: auto;
     text-align: center;
@@ -30,7 +30,8 @@
 
 .about__bio_content {
     display: inherit;
-    flex-direction: inherit;
+    flex-direction: column;
+    align-self: center;
     gap: var(--space-16);
     max-width: 85ch;
 }
