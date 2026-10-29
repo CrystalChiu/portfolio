@@ -3,6 +3,7 @@ import styles from "./Hero.module.css"
 import IconLabel from "../../../ui/IconLabel/IconLabel";
 import { faMapPin, faFile } from "@fortawesome/free-solid-svg-icons";
 import { faSquareLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { ReactTyped } from "react-typed";
 
 export default function Hero() {
     return (
@@ -26,7 +27,11 @@ export default function Hero() {
                     },
                 }}
             >
-                <p className="text-subheading">Hello, World.</p>
+                <p className="text-subheading">
+                    {""}
+                    <ReactTyped strings={["Hello, World"]} typeSpeed={150} />
+                </p>
+
                 <div className={styles.hero__introduction}>
                     <h2 className="text-display-3">I'm</h2>
                     <h1 className={`${styles.hero__name} text-display-2`}>
