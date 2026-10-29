@@ -63,43 +63,45 @@ export default function About() {
             <Divider />
             
             <div className={styles.about_content}>
-                {/* My Story */}
-                    <div className={styles.about__bio}>
-                        <div className={styles.about__bio_header}>
-                            <h2 className="text-display-2-italic">My Story</h2>
-                            <button
-                                type="button"
-                                className={`${styles.highlight_toggle} ${
-                                    areHighlightsEnabled
-                                        ? styles.highlight_toggle_active
-                                        : ""
-                                }`}
-                                aria-pressed={areHighlightsEnabled}
-                                onClick={() =>
-                                    setAreHighlightsEnabled((isEnabled) => !isEnabled)
-                                }
-                            >
-                                <IconLabel
-                                    icon={faHighlighter}
-                                    label={
-                                        areHighlightsEnabled ?
-                                        "On" :
-                                        "Off"
-                                    }
-                                />
-                            </button>
-                        </div>
+                <h1 className="text-display-2">About Me</h1>
 
-                        <div className={styles.about__bio_content}>
-                            {
-                                aboutContent.bio.split("\n\n").map((paragraph, index) => (
-                                <p key={index}>
-                                    {renderBioParagraph(paragraph, areHighlightsEnabled)}
-                                </p>
-                                ))
+                {/* My Story */}
+                <div className={styles.about__bio}>
+                    <div className={styles.about__bio_header}>
+                        <h2>My Story</h2>
+                        <button
+                            type="button"
+                            className={`${styles.highlight_toggle} ${
+                                areHighlightsEnabled
+                                    ? styles.highlight_toggle_active
+                                    : ""
+                            }`}
+                            aria-pressed={areHighlightsEnabled}
+                            onClick={() =>
+                                setAreHighlightsEnabled((isEnabled) => !isEnabled)
                             }
-                        </div>
+                        >
+                            <IconLabel
+                                icon={faHighlighter}
+                                label={
+                                    areHighlightsEnabled ?
+                                    "On" :
+                                    "Off"
+                                }
+                            />
+                        </button>
                     </div>
+
+                    <div className={styles.about__bio_content}>
+                        {
+                            aboutContent.bio.split("\n\n").map((paragraph, index) => (
+                            <p key={index}>
+                                {renderBioParagraph(paragraph, areHighlightsEnabled)}
+                            </p>
+                            ))
+                        }
+                    </div>
+                </div>
 
                 <Divider />
 

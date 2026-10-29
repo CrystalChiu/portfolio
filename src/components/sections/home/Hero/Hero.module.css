@@ -55,7 +55,7 @@
 }
 
 .hero__name {
-    color: var(--color-accent-dark-blue);
+    /* color: var(--color-accent-dark-blue); */
 }
 
 .hero__description {
