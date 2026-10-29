@@ -25,10 +25,8 @@ export default function Contact() {
 
             <div className={styles.contact__content}>
                 <div className={styles.contact__content__intro}>
-                    <p>
-                        Have a question, opportunity, or just want to connect?
-                    </p>
-                    <p className="text-secondary text-body-s">Reach me here:</p>
+                    <p className="text-subheading">Have a question, opportunity, or just want to connect?</p>
+                    <p className="text-secondary">Reach me here:</p>
                 </div>
 
                 <ul className={styles.contact__content__links}>

@@ -1,13 +1,54 @@
+import { useState } from "react";
 import styles from "./About.module.css"
 import Divider from "../../../ui/Divider/Divider"
 import { SkillsCard } from "./SkillsCard/SkillsCard"
 import { aboutContent } from "../../../../content/about"
 import { Link } from "react-router";
 import IconLabel from "../../../ui/IconLabel/IconLabel";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faHighlighter } from "@fortawesome/free-solid-svg-icons";
+import { TextHighlighter } from "../../../fancy/text/text-highlighter";
+
+const highlightedBioPhrases = new Set([
+    "Before computer science, there was art",
+    "creative expression",
+    "digital craftsmanship",
+    "learning from teams who manage larger, more complex systems",
+    "technical rigor, creativity, and user empathy",
+]);
+
+const bioHighlightPattern = new RegExp(
+    `(${[...highlightedBioPhrases]
+        .map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+        .join("|")})`,
+);
+
+function renderBioParagraph(paragraph: string, areHighlightsEnabled: boolean) {
+    return paragraph.split(bioHighlightPattern).map((segment, index) => {
+        if (!highlightedBioPhrases.has(segment)) {
+            return segment;
+        }
+
+        if (!areHighlightsEnabled) {
+            return <span key={`${segment}-${index}`}>{segment}</span>;
+        }
+
+        return (
+            <TextHighlighter
+                key={`${segment}-${index}`}
+                highlightColor="var(--color-highlight)"
+                triggerType="auto"
+                direction="ltr"
+            >
+                {segment}
+            </TextHighlighter>
+        );
+    });
+}
 
 
 export default function About() {
+    const [areHighlightsEnabled, setAreHighlightsEnabled] = useState(false);
+
     const scrollToContact = () => {
         document
             .getElementById("contact")
@@ -21,12 +62,37 @@ export default function About() {
             <div className={styles.about_content}>
                 {/* My Story */}
                     <div className={styles.about__bio}>
-                        <h2 className="text-display-2-italic">My Story</h2>
+                        <div className={styles.about__bio_header}>
+                            <h2 className="text-display-2-italic">My Story</h2>
+                            <button
+                                type="button"
+                                className={`${styles.highlight_toggle} ${
+                                    areHighlightsEnabled
+                                        ? styles.highlight_toggle_active
+                                        : ""
+                                }`}
+                                aria-pressed={areHighlightsEnabled}
+                                onClick={() =>
+                                    setAreHighlightsEnabled((isEnabled) => !isEnabled)
+                                }
+                            >
+                                <IconLabel
+                                    icon={faHighlighter}
+                                    label={
+                                        areHighlightsEnabled ?
+                                        "On" :
+                                        "Off"
+                                    }
+                                />
+                            </button>
+                        </div>
 
                         <div className={styles.about__bio_content}>
                             {
                                 aboutContent.bio.split("\n\n").map((paragraph, index) => (
-                                    <p key={index}>{paragraph}</p>
+                                <p key={index}>
+                                    {renderBioParagraph(paragraph, areHighlightsEnabled)}
+                                </p>
                                 ))
                             }
                         </div>

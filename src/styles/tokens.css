@@ -6,7 +6,7 @@
     --color-bg-dark: #232323;
     --color-surface: #FFFFFF;
     --color-surface-elevated: #FFFEFE;
-    --color-surface-hover: #F5EEE8;
+    --color-surface-hover: #ededed;
     --color-text-primary: #363232;
     --color-text-secondary: #807978;
     --color-text-tertiary: #BEBBBA;
@@ -16,10 +16,11 @@
     --color-secondary: #6B5045;
     --color-accent-beige: #EEF1FC;
     --color-accent-berry: #C08BBF;
-    --color-accent-light-blue: #B9C4ED;
-    --color-accent-dark-blue: #3648a5;
+    --color-accent-light-blue: #d6e6ff;
+    --color-accent-dark-blue: #2b509a;
     --color-accent-light-brown: #4B3730;
     --color-accent-dark-brown: #2E211D;
+    --color-highlight: #e38dc17e;
 
     /* shared typography tokens */
     --font-display: "Instrument Serif", serif;
