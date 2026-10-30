@@ -135,7 +135,7 @@
 }
 
 .about__skills-contact {
-    color: inherit;
+    color: var(--color-text-secondary);
     transition: color 150ms ease;
 }
 

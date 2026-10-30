@@ -50,7 +50,7 @@ function renderBioParagraph(paragraph: string, areHighlightsEnabled: boolean) {
 
 
 export default function About() {
-    const [areHighlightsEnabled, setAreHighlightsEnabled] = useState(false);
+    const [areHighlightsEnabled, setAreHighlightsEnabled] = useState(true);
 
     const scrollToContact = () => {
         document
