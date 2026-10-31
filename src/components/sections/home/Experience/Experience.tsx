@@ -9,14 +9,16 @@ export default function Experience() {
         <section id="experience" className={styles.experience}>
             <h2 className="text-display-1">Experience</h2>
             <div className={styles.experience__timeline}>
-                <div className={coil.line}></div>
-                <div className={styles.experience__timeline__entries}>
+                <div className={coil.line} aria-hidden="true"></div>
+                <ol className={styles.experience__timeline__entries}>
                     {
                         experiences.map((experience) => (
-                            <ExperienceEntry key={`${experience.jobTitle}_${experience.company}`} experience={experience} />
+                            <li key={`${experience.jobTitle}_${experience.company}`}>
+                                <ExperienceEntry experience={experience} />
+                            </li>
                         ))
                     }
-                </div>
+                </ol>
             </div>
         </section>
     )

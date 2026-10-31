@@ -13,6 +13,7 @@
 
 .experience__timeline__entries {
     display: grid;
+    list-style: none;
     row-gap: var(--space-32);
     padding: var(--space-8) 0 var(--space-32) 0;
 

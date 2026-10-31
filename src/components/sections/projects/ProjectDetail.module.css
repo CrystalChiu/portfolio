@@ -1,0 +1,107 @@
+.project_detail {
+    display: grid;
+    row-gap: var(--space-32);
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+
+    border-radius: var(--corner-radius-md);
+    background-color: var(--color-surface-elevated);
+    padding: var(--space-16);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.overview__metadata_row {
+    display: flex;
+    gap: var(--space-32);
+
+}
+
+.overview__metadata {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.overview__summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.overview__metadata ul {
+    list-style-position: inside;
+}
+
+.case_study {
+    display: grid;
+    row-gap: var(--space-24);
+}
+
+.page_controls {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: var(--space-16);
+}
+
+.page_control,
+.page_control_disabled {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    padding: var(--space-16);
+    color: var(--color-text-primary);
+}
+
+.page_control:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-1px); 
+}
+
+.page_control:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+.page_control_next {
+    align-items: flex-end;
+    margin-left: auto;
+    text-align: end;
+}
+
+.page_control_disabled {
+    color: var(--color-text-tertiary);
+}
+
+.page_control__title {
+    font-size: var(--font-size-mono-s);
+    line-height: var(--line-height-mono-s);
+    color: var(--color-text-tertiary);
+    text-align: end;
+}
+
+.page_control_next .page_control__title {
+    text-align: start;
+}
+
+@media (max-width: 720px) {
+    .overview__metadata_row {
+        flex-direction: column;
+        gap: var(--space-12);
+    }
+
+    .page_controls {
+        flex-direction: column;
+    }
+
+    .page_control_next {
+        align-items: flex-start;
+        margin-left: 0;
+        text-align: start;
+    }
+}

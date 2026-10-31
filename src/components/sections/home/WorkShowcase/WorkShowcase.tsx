@@ -4,10 +4,9 @@ import MultiselectDropdown from "../../../ui/MultiselectDropdown/MultiselectDrop
 import ProjectCard from "./ProjectCard/ProjectCard";
 import { PROJECT_CATEGORIES } from "../../../../content/projects";
 import { useProjectFilters } from "../../../../hooks/useProjectFilters";
-// Uncomment after projects added in
-// import { Link } from "react-router";
-// import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-// import IconLabel from "../../../ui/IconLabel/IconLabel";
+import { Link } from "react-router";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import IconLabel from "../../../ui/IconLabel/IconLabel";
 
 export default function WorkShowcase() {
     const {
@@ -24,14 +23,14 @@ export default function WorkShowcase() {
 
     return (
         <section id="work" className={styles.content}>
-            <div className={styles.work__intro}>
+            <header className={styles.work__intro}>
                 <h2 className="text-display-1">Work Showcase</h2>
 
                 <div>
                     <p>A collection of projects that showcase my approach to software engineering, design, and problem-solving.</p>
                     <p>Select a project to explore its story, technical implementation, and the decisions behind it.</p>
                 </div>
-            </div>
+            </header>
 
             <div className={styles.work__filters_bar}>                
                 <MultiselectDropdown
@@ -108,13 +107,13 @@ export default function WorkShowcase() {
                 }
             </div>
 
-            {/* <Link to="/projects" className={styles.view_all}>
+            <Link to="/projects" className={styles.view_all}>
                 <IconLabel 
                     icon={faArrowRight} 
                     label="See More" 
                     iconPosition="right" 
                 />
-            </Link> */}
+            </Link>
         </section>
     )
 }

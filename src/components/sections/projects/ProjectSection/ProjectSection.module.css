@@ -1,0 +1,11 @@
+.project_section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.project_section header {
+    display: inherit;
+    flex-direction: inherit;
+    gap: var(--space-4);
+}
