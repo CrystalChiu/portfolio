@@ -9,10 +9,6 @@
     text-align: center;
 }
 
-.content p {
-    color: var(--color-text-primary);
-}
-
 .about_content {
     display: inherit;
     flex-direction: inherit;
@@ -114,7 +110,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
 }
 
 .about__skills {
@@ -135,7 +131,6 @@
 }
 
 .about__skills-contact {
-    color: var(--color-text-secondary);
     transition: color 150ms ease;
 }
 
@@ -152,5 +147,20 @@
 @media (max-width: 720px) {
     .skills__grid {
         grid-template-columns: 1fr;
+    }
+
+    .about__bio_content {
+        text-align: start;
+    }
+
+    .about__skills-contact {
+        text-align: start;
+        align-self: flex-start;
+        color: var(--color-text-primary);
+    }
+
+    .about__skills-outro p {
+        color: var(--color-text-tertiary);
+        text-align: start;
     }
 }

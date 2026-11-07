@@ -10,6 +10,9 @@
     --color-text-primary: #363232;
     --color-text-secondary: #807978;
     --color-text-tertiary: #BEBBBA;
+    --color-text-light-primary: #FAFAFD;
+    --color-text-light-secondary: #D6D3D2;
+    --color-text-light-tertiary: #A8A5A4;
     --color-border: #E6E6E6;
     --color-divider: #EEF0F2;
     --color-primary: #5D77DB;
@@ -30,6 +33,8 @@
     --weight-regular: 400;
     --weight-medium: 500;
     --weight-semibold: 600;
+
+    --section-width: 48rem;
 
     /* role based typography tokens */
     /* display */

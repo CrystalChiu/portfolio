@@ -1,0 +1,8 @@
+.title_section {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-section-width);
+    margin-inline: auto;
+    gap: var(--space-12);
+    text-align: center;
+}

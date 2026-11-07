@@ -1,0 +1,12 @@
+.scroll_reveal {
+    margin: 0;
+}
+
+.scroll_reveal_text {
+    display: block;
+}
+
+.scroll_reveal_word,
+.scroll_reveal_piece {
+    display: inline-block;
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -16,9 +16,11 @@ export default function Dropdown({
     className,
 }: DropdownProps) {
     const [open, setOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     return (
         <div
+            ref={dropdownRef}
             className={[styles.dropdown, className]
                 .filter(Boolean)
                 .join(" ")}
@@ -28,7 +30,16 @@ export default function Dropdown({
                 className={styles.toggle}
                 aria-expanded={open}
                 onClick={() => setOpen((prev) => !prev)}
-                onBlur={() => setOpen(false)}
+                onBlur={(event) => {
+                    const nextFocused = event.relatedTarget;
+
+                    if (
+                        !nextFocused ||
+                        !dropdownRef.current?.contains(nextFocused)
+                    ) {
+                        setOpen(false);
+                    }
+                }}
             >
                 <span>{label}</span>
 

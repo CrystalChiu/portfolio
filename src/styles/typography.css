@@ -235,6 +235,18 @@
     color: var(--color-text-tertiary);
 }
 
+.text-light-primary {
+    color: var(--color-text-light-primary);
+}
+
+.text-light-secondary {
+    color: var(--color-text-light-secondary);
+}
+
+.text-light-tertiary {
+    color: var(--color-text-light-tertiary);
+}
+
 .weight-1 {
     font-weight: var(--weight-regular);
 }

@@ -1,8 +1,7 @@
 import type { Project } from "../../../content/projects";
 import styles from "./ProjectDetail.module.css";
 import ProjectSection from "./ProjectSection/ProjectSection";
-import { Link } from "react-router";
-import IconLabel from "../../ui/IconLabel/IconLabel";
+import ArrowTextNavLink from "../../ui/ArrowTextNavLink/ArrowTextNavLink";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 type ProjectDetailProps = {
@@ -11,6 +10,14 @@ type ProjectDetailProps = {
     nextProject?: Project;
 };
 
+function formatPublishedAt(date: string) {
+    return new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC",
+    }).format(new Date(date));
+}
+
 export default function ProjectDetail({
     project,
     previousProject,
@@ -18,23 +25,27 @@ export default function ProjectDetail({
 }: ProjectDetailProps) {
     return (
         <article className={styles.project_detail}>
-            {/* Intro Section */}
-            <section>
-                <header className={styles.intro__text}>
+            <section className={styles.intro}>
+                <header className={styles.intro__header}>
+                    <p className={styles.intro__eyebrow}>
+                        <time dateTime={project.publishedAt}>
+                            Published {formatPublishedAt(project.publishedAt)}
+                        </time>
+                    </p>
                     <h1 className="text-display-2">{project.title}</h1>
-                    <p>{project.description}</p>
+                    <p className={styles.intro__dek}>{project.description}</p>
                 </header>
 
-                <div className={styles.intro__gallery}>
-
-                </div>
+                <img
+                    className={styles.cover_img}
+                    src={`/images/projects/${project.slug}/cover.png`}
+                    alt={`${project.title} cover image`}
+                />
             </section>
 
-            {/* Overview Section */}
             <section className={styles.overview}>
                 <h2>Project at a Glance</h2>
 
-                {/* Metadata */}
                 <div className={styles.overview__metadata_row}>
                     <div className={styles.overview__metadata}>
                         <h4>My Role</h4>
@@ -52,11 +63,10 @@ export default function ProjectDetail({
                     </div>
                 </div>
 
-                {/* Summary */}
                 {
                     project.summary && (
                         <div className={styles.overview__summary}>
-                            <h3>Overview</h3>
+                            <h3 className="text-heading-2">Overview</h3>
                             <p>
                                 {project.summary}
                             </p>
@@ -65,7 +75,6 @@ export default function ProjectDetail({
                 }
             </section>
 
-            {/* Case Study */}
             <div className={styles.case_study}>
                 {
                     project.sections.map((section) => (
@@ -74,67 +83,41 @@ export default function ProjectDetail({
                 }
             </div>
 
-            {/* Page Controls */}
             <nav className={styles.page_controls} aria-label="Project navigation">
                 {previousProject ? (
-                    <Link
+                    <ArrowTextNavLink
                         to={`/projects/${previousProject.slug}`}
-                        className={`
-                            ${styles.page_control} 
-                            text-nav
-                        `}
-                        aria-label={`Previous project: ${previousProject.title}`}
-                    >
-                        <IconLabel
-                            icon={faArrowLeft}
-                            label="Previous project"
-                        />
-                        <span className={styles.page_control__title}>
-                            {previousProject.title}
-                        </span>
-                    </Link>
+                        icon={faArrowLeft}
+                        label="Previous project"
+                        title={previousProject.title}
+                        aria-label={`Prev. project: ${previousProject.title}`}
+                    />
                 ) : (
-                    <span className={`${styles.page_control_disabled} text-nav`}>
-                        <IconLabel
-                            icon={faArrowLeft}
-                            label="Previous project"
-                        />
-                    </span>
+                    <ArrowTextNavLink
+                        icon={faArrowLeft}
+                        label="Prev. project"
+                        disabled
+                    />
                 )}
 
                 {nextProject ? (
-                    <Link
+                    <ArrowTextNavLink
                         to={`/projects/${nextProject.slug}`}
-                        className={`
-                            ${styles.page_control} 
-                            ${styles.page_control_next} 
-                            text-nav
-                        `}
+                        icon={faArrowRight}
+                        label="Next project"
+                        title={nextProject.title}
+                        iconPosition="right"
+                        align="end"
                         aria-label={`Next project: ${nextProject.title}`}
-                    >
-                        <IconLabel
-                            icon={faArrowRight}
-                            label="Next project"
-                            iconPosition="right"
-                        />
-                        <span className={styles.page_control__title}>
-                            {nextProject.title}
-                        </span>
-                    </Link>
+                    />
                 ) : (
-                    <span
-                        className={`
-                            ${styles.page_control_disabled} 
-                            ${styles.page_control_next} 
-                            text-nav
-                        `}
-                    >
-                        <IconLabel
-                            icon={faArrowRight}
-                            label="Next project"
-                            iconPosition="right"
-                        />
-                    </span>
+                    <ArrowTextNavLink
+                        icon={faArrowRight}
+                        label="Next project"
+                        iconPosition="right"
+                        align="end"
+                        disabled
+                    />
                 )}
             </nav>
         </article>

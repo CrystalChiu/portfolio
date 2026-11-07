@@ -11,16 +11,24 @@
     gap: var(--space-24);
 }
 
-.experience__timeline__entries {
-    display: grid;
-    list-style: none;
-    row-gap: var(--space-32);
-    padding: var(--space-8) 0 var(--space-32) 0;
+.experience__stack {
+    width: 100%;
+}
 
+.experience__entries {
+    display: grid;
+    row-gap: var(--space-12);
+    padding: 0 0 var(--space-32) 0;
 }
 
 /* Extend the coil line through Experience's bottom padding
    so it connects seamlessly with the Contact section's line */
 .experience__timeline .coil::before {
     bottom: calc(-1 * var(--space-32));
+}
+
+@media (max-width: 720px) {
+    .experience__timeline {
+        gap: var(--space-16);
+    }
 }

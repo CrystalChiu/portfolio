@@ -35,7 +35,7 @@
 .contact__content__intro {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-8);
 }
 
 .contact__content__links {
@@ -93,4 +93,25 @@
     /* font-size: var(--font-size-display-4); */
     color: var(--color-accent-dark-blue);
     font-weight: var(--weight-regular);
+}
+
+@media (max-width: 720px) {
+    .contact {
+        gap: var(--space-24);
+    }
+
+    .contact p {
+        text-align: start;
+    }
+
+    .contact__content__links {
+        flex-direction: column;
+        gap: var(--space-12);
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+
+    .contact__heading {
+        gap: var(--space-24);
+    }
 }
