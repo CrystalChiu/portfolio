@@ -1,16 +1,20 @@
-// hovering over work showcase navlink opens menu w/projects -> takes to project details page
-// other links are anchor links within home page
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import styles from "./Navbar.module.css";
 import SeasonalPortrait from "../accents/SeasonalPortrait";
+import WorksNavMenu from "./WorksNavMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const DESKTOP_NAVBAR_HEIGHT = 72;
 
-const navItems = [
-    { label: "Home", to: "/#hero" },
+type NavItem = {
+    label: string;
+    to: string;
+};
+
+const navItems: NavItem[] = [
+    { label: "Home", to: "/" },
     { label: "About", to: "/#about" },
     { label: "Works", to: "/#work" },
     { label: "Experience", to: "/#experience" },
@@ -19,6 +23,7 @@ const navItems = [
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [worksMenuOpen, setWorksMenuOpen] = useState(false);
     const [isPastHero, setIsPastHero] = useState(false);
     const { pathname, hash } = useLocation();
 
@@ -49,10 +54,20 @@ export default function Navbar() {
 
     function closeMenu() {
         setMenuOpen(false);
+        setWorksMenuOpen(false);
+    }
+
+    function handleMenuToggle() {
+        const nextMenuOpen = !menuOpen;
+
+        setMenuOpen(nextMenuOpen);
+        if (!nextMenuOpen) setWorksMenuOpen(false);
     }
 
     function handleNavLinkClick(to: string) {
-        const targetHash = to.slice(to.indexOf("#"));
+        const targetHash = to.includes("#")
+            ? to.slice(to.indexOf("#"))
+            : hash;
 
         if (pathname === "/" && hash === targetHash) {
             document
@@ -75,12 +90,12 @@ export default function Navbar() {
                 }`}
                 aria-label="Main navigation"
             >
-                <div className={styles.brand}>
+                <Link to="/" className={styles.brand}>
                     <SeasonalPortrait />
                     <h2 className={styles.logo}>
                         Crystal Chiu
                     </h2>
-                </div>
+                </Link>
 
                 <button
                     className={`${styles.menuToggle} ${
@@ -90,7 +105,7 @@ export default function Navbar() {
                     aria-label={menuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={menuOpen}
                     aria-controls="primary-navigation"
-                    onClick={() => setMenuOpen((open) => !open)}
+                    onClick={handleMenuToggle}
                 >
                     <FontAwesomeIcon icon={faChevronDown} aria-hidden="true" />
                 </button>
@@ -102,13 +117,23 @@ export default function Navbar() {
                     }`}
                 >
                     {navItems.map((item) => (
-                        <li key={item.to}>
-                            <Link
-                                to={item.to}
-                                onClick={() => handleNavLinkClick(item.to)}
-                            >
-                                {item.label}
-                            </Link>
+                        <li key={item.label}>
+                            {
+                                item.label === "Works" ? (
+                                    <WorksNavMenu
+                                        open={worksMenuOpen}
+                                        onOpenChange={setWorksMenuOpen}
+                                        onNavigate={handleNavLinkClick}
+                                    />
+                                ) : (
+                                    <Link
+                                        to={item.to}
+                                        onClick={() => handleNavLinkClick(item.to)}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                )
+                            }
                         </li>
                     ))}
                 </ul>

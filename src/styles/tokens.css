@@ -10,6 +10,9 @@
     --color-text-primary: #363232;
     --color-text-secondary: #807978;
     --color-text-tertiary: #BEBBBA;
+    --color-text-light-primary: #FAFAFD;
+    --color-text-light-secondary: #D6D3D2;
+    --color-text-light-tertiary: #A8A5A4;
     --color-border: #E6E6E6;
     --color-divider: #EEF0F2;
     --color-primary: #5D77DB;
@@ -30,6 +33,8 @@
     --weight-regular: 400;
     --weight-medium: 500;
     --weight-semibold: 600;
+
+    --section-width: 48rem;
 
     /* role based typography tokens */
     /* display */
@@ -54,6 +59,10 @@
     /* mono */
     --font-size-mono-s: 12px;
     --font-size-mono-m: 14px;
+    --letter-spacing-mono-regular: 0;
+    --letter-spacing-mono-label: 0.1em;
+    --letter-spacing-mono-eyebrow: 0.12em;
+    --letter-spacing-mono-heading: 0.14em;
 
     /* small utilities */
     --font-size-caption: 14px;

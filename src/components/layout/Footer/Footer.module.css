@@ -4,7 +4,6 @@
     justify-content: space-between;
     gap: var(--space-16);
 
-    max-width: var(--page-max-width);
     padding: var(--space-16) var(--page-padding-inline) var(--space-24);
 
     border-top: 1px solid var(--color-divider);

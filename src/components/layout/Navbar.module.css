@@ -40,6 +40,12 @@
   align-items: center;
   gap: var(--space-4);
   flex-shrink: 0;
+  scale: 1;
+  transition: scale 300ms ease-in-out;
+}
+
+.brand:hover {
+  scale: 1.03;
 }
 
 .logo {
@@ -69,6 +75,94 @@
   line-height: var(--line-height-nav);
   text-decoration: none;
   transition: color 160ms ease;
+}
+
+.worksDropdown {
+  position: relative;
+  display: inline-flex;
+  gap: 0;
+}
+
+.worksDropdown.worksDropdown:hover {
+  background-color: transparent;
+}
+
+.worksDropdown > button {
+  width: auto;
+  padding: 0;
+  gap: var(--space-4);
+  color: var(--color-text-primary);
+  font-family: var(--font-default);
+  font-size: var(--font-size-nav);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-nav);
+}
+
+.worksDropdown > button > span:first-child {
+  display: inline-flex;
+}
+
+.worksDropdown > button > svg {
+  color: var(--color-text-secondary);
+  font-size: 0.65em;
+}
+
+.worksDropdown > button:hover,
+.worksDropdown > button:focus-visible {
+  color: var(--color-primary);
+  outline-offset: 4px;
+}
+
+.worksDropdown > .worksMenu {
+  right: 0;
+  left: auto;
+  min-width: 8rem;
+  border-color: var(--color-border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2px);
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 0s linear 160ms;
+}
+
+.worksDropdown[data-open="true"] > .worksMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 0s;
+}
+
+.worksDropdown > .worksMenu > ul {
+  gap: 0;
+}
+
+.worksDropdown > .worksMenu > ul > li {
+  padding: 0;
+}
+
+.worksDropdown > .worksMenu a {
+  display: block;
+  padding: var(--space-4) var(--space-8);
+  color: var(--color-text-primary);
+  font-family: var(--font-default);
+  font-size: var(--font-size-mono-s);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-mono-s);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 120ms ease;
+}
+
+.worksDropdown a:hover,
+.worksDropdown a:focus-visible {
+  color: var(--color-primary);
 }
 
 .links a:hover {
@@ -131,6 +225,54 @@
   .links a {
     display: block;
     padding-block: var(--space-12);
+  }
+
+  .worksDropdown {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .worksDropdown > button {
+    position: static;
+    justify-content: space-between;
+    padding-block: var(--space-12);
+  }
+
+  .worksDropdown > .worksMenu {
+    position: static;
+    right: auto;
+    left: auto;
+    min-width: 0;
+    width: 100%;
+    padding: 0 0 0 var(--space-16);
+    background-color: transparent;
+    border: 0;
+    border-left: 1px solid var(--color-border);
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 1;
+    transform: none;
+    transition:
+      grid-template-rows 220ms ease,
+      visibility 0s linear 220ms;
+  }
+
+  .worksDropdown[data-open="true"] > .worksMenu {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      grid-template-rows 220ms ease,
+      visibility 0s;
+  }
+
+  .worksDropdown > .worksMenu > ul {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .worksDropdown > .worksMenu a {
+    padding-block: var(--space-8);
   }
 
   .navScrolled {

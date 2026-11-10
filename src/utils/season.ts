@@ -20,7 +20,7 @@ const HOLIDAYS: readonly Holiday[] = [
     },
     {
         name: "halloween",
-        activeMonths: [9, 10],
+        activeMonths: [9],
         alt: "Spooky Crystal illustration.",
     },
     {

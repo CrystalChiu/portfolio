@@ -78,10 +78,10 @@ export default function Hero() {
                     }}
                 >
                     <h1 className="text-display-1">
-                        Software Engineer with really good taste.
+                        Full-Stack Engineer, Whim-SWE
                     </h1>
                     <p>
-                        I’m looking to become an expert at engineering technically complex, joyful, and humanistic digital experiences.
+                        An aspiring product-minded SWE who enjoys the engineering beneath the experience.
                     </p>
                 </motion.div>
             </div>

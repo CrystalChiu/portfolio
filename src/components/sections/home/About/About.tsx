@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import IconLabel from "../../../ui/IconLabel/IconLabel";
 import { faChevronDown, faHighlighter } from "@fortawesome/free-solid-svg-icons";
 import { TextHighlighter } from "../../../fancy/text/text-highlighter";
+import ScrollReveal from "./ScrollReveal";
 
 const highlightedBioPhrases = new Set([
     "outlet for creative expression",
@@ -24,6 +25,16 @@ const bioHighlightPattern = new RegExp(
         .map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
         .join("|")})`,
 );
+
+const sharedScrollRevealProps = {
+    mode: "scrub",
+    splitBy: "words",
+    stagger: 0.3,
+    baseOpacity: 0.1,
+    baseRotation: 1,
+    enableBlur: true,
+    blurStrength: 4,
+} as const;
 
 function renderBioParagraph(paragraph: string, areHighlightsEnabled: boolean) {
     return paragraph.split(bioHighlightPattern).map((segment, index) => {
@@ -63,12 +74,26 @@ export default function About() {
             <Divider />
             
             <div className={styles.about_content}>
-                <h1 className="text-display-2">About Me</h1>
+                <ScrollReveal
+                    as="h1"
+                    effect="fade"
+                    textClassName="text-display-2"
+                    {...sharedScrollRevealProps}
+                >
+                    About Me
+                </ScrollReveal>
 
                 {/* My Story */}
                 <div className={styles.about__bio}>
                     <div className={styles.about__bio_header}>
-                        <h2>My Story</h2>
+                        <ScrollReveal
+                            as="h2"
+                            effect="rise"
+                            baseOffset={8}
+                            {...sharedScrollRevealProps}
+                        >
+                            My Story
+                        </ScrollReveal>
                         <button
                             type="button"
                             className={`${styles.highlight_toggle} ${
@@ -95,9 +120,18 @@ export default function About() {
                     <div className={styles.about__bio_content}>
                         {
                             aboutContent.bio.split("\n\n").map((paragraph, index) => (
-                            <p key={index}>
-                                {renderBioParagraph(paragraph, areHighlightsEnabled)}
-                            </p>
+                                <ScrollReveal
+                                    key={index}
+                                    as="p"
+                                    effect="rise"
+                                    baseOffset={12}
+                                    {...sharedScrollRevealProps}
+                                >
+                                    {renderBioParagraph(
+                                        paragraph,
+                                        areHighlightsEnabled,
+                                    )}
+                                </ScrollReveal>
                             ))
                         }
                     </div>
@@ -111,7 +145,7 @@ export default function About() {
                         <div key={credential.title} className={styles.credential}>
                             <h3 className="text-heading-3">{credential.title}</h3>
                             <div className={styles.credential__details}>
-                                <p className="text-mono-s">{credential.date}</p>
+                                <p className="text-mono-s text-tertiary">{credential.date}</p>
                                 <p className="text-mono-m">{credential.degree}</p>
                                 <p>{credential.institution}</p>
                             </div>
