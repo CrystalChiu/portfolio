@@ -8,28 +8,60 @@ type DropdownProps = {
     label: string;
     children: ReactNode;
     className?: string;
+    contentClassName?: string;
+    id?: string;
+    keepContentMounted?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    open?: boolean;
 };
 
 export default function Dropdown({
     label,
     children,
     className,
+    contentClassName,
+    id,
+    keepContentMounted = false,
+    onOpenChange,
+    open,
 }: DropdownProps) {
-    const [open, setOpen] = useState(false);
+    const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
+    const toggleRef = useRef<HTMLButtonElement | null>(null);
+    const isControlled = open !== undefined;
+    const isOpen = isControlled ? open : uncontrolledOpen;
+
+    function updateOpen(nextOpen: boolean) {
+        if (isControlled) {
+            onOpenChange?.(nextOpen);
+            return;
+        }
+
+        setUncontrolledOpen(nextOpen);
+    }
 
     return (
         <div
             ref={dropdownRef}
+            data-open={isOpen}
             className={[styles.dropdown, className]
                 .filter(Boolean)
                 .join(" ")}
+            onKeyDown={(event) => {
+                if (event.key !== "Escape" || !isOpen) return;
+
+                event.stopPropagation();
+                updateOpen(false);
+                toggleRef.current?.focus();
+            }}
         >
             <button
+                ref={toggleRef}
                 type="button"
                 className={styles.toggle}
-                aria-expanded={open}
-                onClick={() => setOpen((prev) => !prev)}
+                aria-expanded={isOpen}
+                aria-controls={id}
+                onClick={() => updateOpen(!isOpen)}
                 onBlur={(event) => {
                     const nextFocused = event.relatedTarget;
 
@@ -37,7 +69,7 @@ export default function Dropdown({
                         !nextFocused ||
                         !dropdownRef.current?.contains(nextFocused)
                     ) {
-                        setOpen(false);
+                        updateOpen(false);
                     }
                 }}
             >
@@ -49,7 +81,7 @@ export default function Dropdown({
                     aria-hidden="true"
                     className={[
                         styles.chevron,
-                        open ? styles.chevronOpen : "",
+                        isOpen ? styles.chevronOpen : "",
                     ]
                         .filter(Boolean)
                         .join(" ")}
@@ -57,13 +89,19 @@ export default function Dropdown({
             </button>
 
             {/* Conditionally render child/menu content */}
-            { 
-                open && 
-                <div 
-                    className={styles.content}
-                >
-                    {children}
-                </div> 
+            {
+                (keepContentMounted || isOpen) && (
+                    <div
+                        id={id}
+                        className={[styles.content, contentClassName]
+                            .filter(Boolean)
+                            .join(" ")}
+                        aria-hidden={keepContentMounted && !isOpen}
+                        inert={keepContentMounted && !isOpen}
+                    >
+                        {children}
+                    </div>
+                )
             }
         </div>
     );

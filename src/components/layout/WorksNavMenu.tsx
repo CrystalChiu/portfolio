@@ -3,16 +3,31 @@ import Dropdown from "../ui/Dropdown/Dropdown";
 import styles from "./Navbar.module.css";
 
 type WorksNavMenuProps = {
+    onOpenChange: (open: boolean) => void;
     onNavigate: (to: string) => void;
+    open: boolean;
 };
 
-export default function WorksNavMenu({ onNavigate }: WorksNavMenuProps) {
+export default function WorksNavMenu({
+    onOpenChange,
+    onNavigate,
+    open,
+}: WorksNavMenuProps) {
     function handleNavigate(to: string) {
+        onOpenChange(false);
         onNavigate(to);
     }
 
     return (
-        <Dropdown label="Works" className={styles.worksDropdown}>
+        <Dropdown
+            id="works-navigation"
+            label="Works"
+            className={styles.worksDropdown}
+            contentClassName={styles.worksMenu}
+            keepContentMounted
+            open={open}
+            onOpenChange={onOpenChange}
+        >
             <ul>
                 <li>
                     <Link to="/#work" onClick={() => handleNavigate("/#work")}>

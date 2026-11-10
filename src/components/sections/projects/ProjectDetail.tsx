@@ -113,14 +113,14 @@ export default function ProjectDetail({
                         <ArrowTextNavLink
                             to={`/projects/${previousProject.slug}`}
                             icon={faArrowLeft}
-                            label="Previous project"
+                            label="Prev project"
                             title={previousProject.title}
-                            aria-label={`Prev. project: ${previousProject.title}`}
+                            aria-label={`Previous project: ${previousProject.title}`}
                         />
                     ) : (
                         <ArrowTextNavLink
                             icon={faArrowLeft}
-                            label="Prev. project"
+                            label="Prev project"
                             disabled
                         />
                     )}

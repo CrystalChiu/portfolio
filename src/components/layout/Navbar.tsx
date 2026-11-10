@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [worksMenuOpen, setWorksMenuOpen] = useState(false);
     const [isPastHero, setIsPastHero] = useState(false);
     const { pathname, hash } = useLocation();
 
@@ -53,6 +54,14 @@ export default function Navbar() {
 
     function closeMenu() {
         setMenuOpen(false);
+        setWorksMenuOpen(false);
+    }
+
+    function handleMenuToggle() {
+        const nextMenuOpen = !menuOpen;
+
+        setMenuOpen(nextMenuOpen);
+        if (!nextMenuOpen) setWorksMenuOpen(false);
     }
 
     function handleNavLinkClick(to: string) {
@@ -96,7 +105,7 @@ export default function Navbar() {
                     aria-label={menuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={menuOpen}
                     aria-controls="primary-navigation"
-                    onClick={() => setMenuOpen((open) => !open)}
+                    onClick={handleMenuToggle}
                 >
                     <FontAwesomeIcon icon={faChevronDown} aria-hidden="true" />
                 </button>
@@ -111,7 +120,11 @@ export default function Navbar() {
                         <li key={item.label}>
                             {
                                 item.label === "Works" ? (
-                                    <WorksNavMenu onNavigate={handleNavLinkClick} />
+                                    <WorksNavMenu
+                                        open={worksMenuOpen}
+                                        onOpenChange={setWorksMenuOpen}
+                                        onNavigate={handleNavLinkClick}
+                                    />
                                 ) : (
                                     <Link
                                         to={item.to}

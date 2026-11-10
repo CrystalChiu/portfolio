@@ -136,6 +136,7 @@
 
     .intro {
         gap: var(--space-32);
+        justify-self: baseline;
     }
 
     .project_detail {
