@@ -82,7 +82,7 @@ export const projects: Project[] = [
         summary: "Tagcsoft was an ERP application built for The Alliance Group Enterprise, an engineering consulting organization. At the time I joined, it had outgrown its original project-management scope. It held important operational data, but its engineering practices, hosting environment, and codebase had not matured at the same pace.",
         technologies: ["Laravel (PHP)", "Vue.js", "MySQL", "Docker", "Terraform", "GitHub Actions", "AWS (EC2, EBS, S3, SES)"],
         categories: ["Full-Stack", "DevOps", "Cloud", "UIUX"],
-        publishedAt: "2026-11-6",
+        publishedAt: "2026-11-06",
         sections: [
             {
                 position: null,
@@ -196,7 +196,7 @@ export const projects: Project[] = [
         summary: "During my time at UCI, I was part of the student development team responsible for the university's commencement platform under the Department of Student Affairs. Despite being unfamiliar with the Laravel, Vue.js, and MySQL stack and it being my first professional development role, I quickly learned and contributed to bug fixes, testing, performance improvements, and, eventually, new developer support and key feature development. Two contributions in particular stood out as high-impact, high-ownership, full builds.",
         technologies: ["Laravel (PHP)", "Vue.Js", "SCSS", "Cypress"],
         categories: ["Full-Stack"],
-        publishedAt: "2026-11-9",
+        publishedAt: "2026-11-09",
         sections: [
             {
                 position: null,

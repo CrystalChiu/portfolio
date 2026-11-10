@@ -182,10 +182,6 @@ export default function About() {
                     </div>
                 </div>
 
-                {/* <div className={styles.about__tldr}>
-                    <strong className="text-display-4-italic">All in all,</strong>
-                    <p className="text-subheading">{aboutContent.tldr}</p>
-                </div> */}
             </div>
 
         </section>

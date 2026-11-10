@@ -12,7 +12,7 @@ export default function Experience() {
                 <div className={styles.experience__entries}>
                     {
                         experiences.map((experience) => (
-                            <ExperienceEntry experience={experience} />
+                            <ExperienceEntry key={experience.company} experience={experience} />
                         ))
                     }
                 </div>

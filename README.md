@@ -1,37 +1,46 @@
-# React + TypeScript + Vite
+# Crystal Chiu — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+My creative full-stack software engineering portfolio, showcasing selected projects and professional experience. Built with React and TypeScript.
 
-Currently, two official plugins are available:
+Designed and developed by me as a personal website and ongoing exploration of frontend engineering, interaction design, and thoughtful software development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Bonus**: Keep an eye out for easter eggs (>ᴗ•)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React 19 + TypeScript
+- **Build tool:** Vite
+- **Styling:** CSS Modules + custom design tokens
+- **Animations:** GSAP, Motion
+- **Infrastructure:** Cloudflare
 
-## Expanding the Oxlint configuration
+## Features
+- Project index with dedicated, dynamically routed case study pages
+- Structured project page content with reusable, buildable sections and media
+- Component-based architecture with modular styling
+- Design token system and typography classes
+- Responsive interface and motion-enhanced interactions
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Getting Started
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+Requires Node.js (LTS recommended).
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Then open the printed local URL in your browser.
 
----
+## Available Scripts
 
-# portfolio
-My creative full-stack SWE portfolio showcasing my software engineering projects and experience. Built with React and Typescript.
+- `npm run dev` — start the dev server
+- `npm run build` — type-check and build for production
+- `npm run lint` — run Oxlint
+- `npm run preview` — preview the production build locally
+
+## Deploying
+
+The production build outputs to `dist/`. Deploy it to any static host (GitHub Pages, Netlify, Vercel, etc.).
