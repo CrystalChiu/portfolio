@@ -2,8 +2,6 @@ import styles from "./Experience.module.css"
 import { experiences } from "../../../../content/experience"
 import ExperienceEntry from "./ExperienceEntry/ExperienceEntry"
 import coil from "../Coil.module.css";
-import ScrollStack, { ScrollStackItem } from "../../../ui/ScrollStack/ScrollStack";
-
 
 export default function Experience() {
     return (
