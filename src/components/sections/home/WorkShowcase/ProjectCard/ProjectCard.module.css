@@ -15,12 +15,22 @@
     text-decoration: none;
 }
 
+.cover_wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--corner-radius-sm);
+}
+
 .cover {
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     background-color: var(--color-divider);
     border-radius: var(--corner-radius-sm);
+}
+
+.link:hover .cover {
+    filter: brightness(0.8);
 }
 
 .metadata {

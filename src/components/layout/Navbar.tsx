@@ -90,12 +90,12 @@ export default function Navbar() {
                 }`}
                 aria-label="Main navigation"
             >
-                <div className={styles.brand}>
+                <Link to="/" className={styles.brand}>
                     <SeasonalPortrait />
                     <h2 className={styles.logo}>
                         Crystal Chiu
                     </h2>
-                </div>
+                </Link>
 
                 <button
                     className={`${styles.menuToggle} ${

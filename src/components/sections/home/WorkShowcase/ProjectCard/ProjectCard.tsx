@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
+import { useState } from "react";
 import type { Project } from "../../../../../content/projects";
 import {
     PROJECT_IMGS_PATH,
     PROJECT_TYPE_LABELS,
 } from "../../../../../content/projects";
 import styles from "./ProjectCard.module.css";
+import Sparkles from "../../../../ui/Sparkles/Sparkles";
 
 type ProjectCardProps = {
     project: Project
@@ -15,22 +17,27 @@ export default function ProjectCard({
     project
 }: ProjectCardProps) {
     const coverSrc = `${PROJECT_IMGS_PATH}/${project.slug}/cover.png`;
+    const [sparklesActive, setSparklesActive] = useState(false);
 
     return (
         <article className={styles.card}>
             <Link  
                 to={`/projects/${project.slug}`}
                 className={styles.link}
+                onMouseEnter={() => setSparklesActive(true)}
+                onMouseLeave={() => setSparklesActive(false)}
+                onFocus={() => setSparklesActive(true)}
+                onBlur={() => setSparklesActive(false)}
             >
-                <motion.img
-                    src={coverSrc}
-                    alt={`${project.title} — project preview`}
-                    className={styles.cover}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                />
+                <div className={styles.cover_wrapper}>
+                    <motion.img
+                        src={coverSrc}
+                        alt={`${project.title} — project preview`}
+                        className={styles.cover}
+                    />
+
+                    <Sparkles active={sparklesActive} />
+                </div>
 
                 <div className={styles.metadata}>
                     <div className={styles.title_row}>
