@@ -10,10 +10,26 @@ export const PROJECT_CATEGORIES = [
 
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 
+export const PROJECT_TYPES = [
+    "open-source",
+    "professional",
+    "personal",
+] as const;
+
+export type ProjectType = (typeof PROJECT_TYPES)[number];
+
+export const PROJECT_TYPE_LABELS: Record<ProjectType, string> = {
+    "open-source": "Open Source",
+    professional: "Professional",
+    personal: "Personal",
+};
+
 export type Project = {
     slug: string;
     title: string;
     role: string;
+    url?: string;
+    projectType: ProjectType;
     description: string;
     summary: string | null;
     technologies: string[];
@@ -61,11 +77,12 @@ export const projects: Project[] = [
         slug: "tagcsoft",
         title: "Tagcsoft",
         role: "Software Engineer",
-        description: "An internal ERP application supporting project management, timesheets, invoicing, internal software distribution, and IT support ticketing across multiple offices.",
+        projectType: "professional",
+        description: "Reengineering, modernizing, and building on a custom ERP in 3 phases for a civil-engineering consulting enterprise.",
         summary: "Tagcsoft was an ERP application built for The Alliance Group Enterprise, an engineering consulting organization. At the time I joined, it had outgrown its original project-management scope. It held important operational data, but its engineering practices, hosting environment, and codebase had not matured at the same pace.",
         technologies: ["Laravel (PHP)", "Vue.js", "MySQL", "Docker", "Terraform", "GitHub Actions", "AWS (EC2, EBS, S3, SES)"],
         categories: ["Full-Stack", "DevOps", "Cloud", "UIUX"],
-        publishedAt: "2026-10-31",
+        publishedAt: "2026-11-6",
         sections: [
             {
                 position: null,
@@ -136,6 +153,12 @@ export const projects: Project[] = [
             },
             {
                 position: null,
+                type: "title",
+                title: "Conclusion",
+                images: []
+            },
+            {
+                position: null,
                 type: "list",
                 title: "Outcomes",
                 items: [
@@ -165,16 +188,61 @@ export const projects: Project[] = [
         ]
     },
     {
-        slug: "example-2",
-        title: "Example 2 Project",
-        role: "Developer",
-        description: "A placeholder project.",
-        summary: null,
-        technologies: ["React", "TypeScript", "CSS"],
-        categories: ["Full-Stack", "AI"],
-        publishedAt: "2026-11-1",
+        slug: "commencement",
+        title: "UCI Commencement",
+        role: "Student Web Developer",
+        projectType: "professional",
+        description: "Building software for a university's largest annual event. My work on the UC Irvine commencement platform.",
+        summary: "During my time at UCI, I was part of the student development team responsible for the university's commencement platform under the Department of Student Affairs. Despite being unfamiliar with the Laravel, Vue.js, and MySQL stack and it being my first professional development role, I quickly learned and contributed to bug fixes, testing, performance improvements, and, eventually, new developer support and key feature development. Two contributions in particular stood out as high-impact, high-ownership, full builds.",
+        technologies: ["Laravel (PHP)", "Vue.Js", "SCSS", "Cypress"],
+        categories: ["Full-Stack"],
+        publishedAt: "2026-11-9",
         sections: [
-
+            {
+                position: null,
+                type: "title",
+                title: "Featured Contributions",
+                images: []
+            },
+            {
+                position: 1,
+                type: "default",
+                title: "Contribution 1: Seating Chart Tool",
+                images: [],
+                paragraphs: [
+                    "The commencement team needed a more flexible way to create and manage ceremony seating charts on the internal side of the platform. I helped build the Seating Chart Tool from the ground up, working closely with the technical lead and other developers.",
+                    "The tool allowed administrators to design ceremony-specific layouts, block off unavailable seats, and reserve seats for specific groups or individuals. It also included an auto-assign feature that distributed students across the chart using proprietary grouped seating logic, reducing the amount of manual placement work required for each ceremony.",
+                    "My contribution went beyond implementation. I worked on the initial mockups and took on more responsibility for planning the feature, including writing tickets and helping the technical lead shape the software architecture. The hardest part was not simply rendering seats on a page; it was modeling a flexible layout system that could support real ceremony constraints while keeping the auto-assignment behavior predictable and fast. Maintaining good time complexity was a high priority, as the system managed tens of thousands of student records accumulated over years of commencements.",
+                    "Despite the constraints, the team managed to meet the deadline with time to spare, which I used to polish the application front-end and build E2E tests. The result was a production tool that gave administrators direct control over seating logistics and removed a significant amount of manual coordination from the ceremony planning process."
+                ]
+            },
+            {
+                position: 2,
+                type: "default",
+                title: "Contribution 2: Event Request Application",
+                images: [],
+                paragraphs: [
+                    "I also built the Event Request application, a separate sister application for coordinating minor events under UCI Commencement. I completed the implementation independently, with supervision and some architectural guidance from the technical lead.",
+                    "The application supported the full request workflow: form submissions, speaker booking, and email coordination between event organizers and the commencement team. Because it was a standalone application rather than a feature inside the main platform, I worked across the full stack, from data modeling and application logic to interface behavior and communication workflows.",
+                    "This project gave me a rare amount of ownership early in my career. I was responsible for translating an operational process into a working application, while still collaborating with a technical lead who reviewed the direction and helped me make better architectural decisions. It was completed by the end of my summer session and put into production."
+                ]
+            },
+            {
+                position: null,
+                type: "title",
+                title: "Conclusion",
+                images: []
+            },
+            {
+                position: 3,
+                type: "default",
+                title: "Reflections",
+                images: [],
+                paragraphs: [
+                    "My work on UCI Commencement combined everyday production maintenance with two larger feature builds. With the Seating Chart Tool, I gained experience designing production mockups, shaping application architecture, writing implementation tickets, and technical documents. The Event Request application gave me even more ownership by designing and implementing an entire full-stack application from the ground up over the summer session, based on admin requirements and through sprints between me and my technical lead.",
+                    "This was my first professional development role, and I joined with a lot to learn. My technical lead gave me space to propose solutions, make mistakes, and think through architecture instead of just implementing tickets. That mentorship taught me how to collaborate with other developers, ask better questions, and take ownership of real production work. By the end, I had gone from feeling like a student learning to code to feeling like an engineer trusted to ship software people relied on."
+                ]
+            }
         ]
     }
 ];

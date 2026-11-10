@@ -59,6 +59,10 @@
     /* mono */
     --font-size-mono-s: 12px;
     --font-size-mono-m: 14px;
+    --letter-spacing-mono-regular: 0;
+    --letter-spacing-mono-label: 0.1em;
+    --letter-spacing-mono-eyebrow: 0.12em;
+    --letter-spacing-mono-heading: 0.14em;
 
     /* small utilities */
     --font-size-caption: 14px;

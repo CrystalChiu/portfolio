@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import type { Project } from "../../../../../content/projects";
-import { PROJECT_IMGS_PATH } from "../../../../../content/projects";
+import {
+    PROJECT_IMGS_PATH,
+    PROJECT_TYPE_LABELS,
+} from "../../../../../content/projects";
 import styles from "./ProjectCard.module.css";
 
 type ProjectCardProps = {
@@ -30,7 +33,12 @@ export default function ProjectCard({
                 />
 
                 <div className={styles.metadata}>
-                    <h3>{ project.title }</h3>
+                    <div className={styles.title_row}>
+                        <h3>{ project.title }</h3>
+                        <span className={styles.type_tag}>
+                            {PROJECT_TYPE_LABELS[project.projectType]}
+                        </span>
+                    </div>
             
                     <ul className={styles.technologies__list}>
                         {
@@ -54,6 +62,19 @@ export default function ProjectCard({
                     <p>{ project.description }</p>
                 </div>
             </Link>
+
+            {
+                project.url && (
+                    <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.external_link}
+                    >
+                        Visit project
+                    </a>
+                )
+            }
         </article>
     );
 }

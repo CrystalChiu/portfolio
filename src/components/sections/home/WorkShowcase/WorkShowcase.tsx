@@ -7,7 +7,8 @@ import Divider from "../../../ui/Divider/Divider";
 
 export default function WorkShowcase() {
     const featuredProjects = [
-        'tagcsoft'
+        'tagcsoft',
+        'commencement'
     ];
     const visibleProjects = projects.filter((project) => featuredProjects.includes(project.slug))
 
@@ -17,8 +18,7 @@ export default function WorkShowcase() {
                 <div className={styles.content__heading__group}>
                     <div className={styles.work__intro}>
                         <h2 className="text-display-1">Work Showcase</h2>
-                        <p>A collection of projects that showcase my approach to software engineering, design, and problem-solving.</p>
-                        <p>Select a project to explore its story, technical implementation, and the decisions behind it.</p>
+                        <p>Featured projects that showcase my approach to software engineering, design, and problem-solving.</p>
                     </div>
 
                     <Divider />

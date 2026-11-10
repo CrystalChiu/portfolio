@@ -22,11 +22,19 @@
 
 .intro__eyebrow {
     color: var(--color-text-secondary);
-    font-size: var(--font-size-mono-s);
-    font-weight: var(--weight-medium);
-    line-height: var(--line-height-mono-s);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-mono-eyebrow);
+}
+
+.nav_links {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: var(--space-24);
+    color: var(--color-text-secondary);
+}
+
+.nav_links__link:hover {
+    color: var(--color-primary)
 }
 
 .intro__dek {
@@ -52,11 +60,6 @@
 
 .overview h2 {
     color: var(--color-text-secondary);
-    font-size: var(--font-size-mono-s);
-    font-weight: var(--weight-medium);
-    line-height: var(--line-height-mono-s);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
 }
 
 .overview__metadata_row {
@@ -75,11 +78,6 @@
 
 .overview__metadata h4 {
     color: var(--color-text-tertiary);
-    font-size: var(--font-size-mono-s);
-    font-weight: var(--weight-medium);
-    line-height: var(--line-height-mono-s);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
 }
 
 .overview__metadata ul {
@@ -130,7 +128,17 @@
 }
 
 @media (max-width: 720px) {
+    .intro__header, .intro__eyebrow {
+        gap: var(--space-16);
+        text-align: start;
+        justify-self: baseline;
+    }
+
     .intro {
+        gap: var(--space-32);
+    }
+
+    .project_detail {
         gap: var(--space-24);
     }
 

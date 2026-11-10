@@ -29,10 +29,8 @@ export default function Projects() {
                     <div className={styles.content__heading}>
                         <div className={styles.content__heading__group}>
                             <div className={styles.work__intro}>
-                                <h2 className="text-display-1">My Works</h2>
-                                <p>
-                                    Click each card to learn more about its development process.
-                                </p>
+                                <h2 className="text-display-1">All Works</h2>
+                                <p>A collection of projects, problems solved, and the engineering behind the work. Explore the process, implementation, and impact of each.</p>
                             </div>
 
                             <Divider />

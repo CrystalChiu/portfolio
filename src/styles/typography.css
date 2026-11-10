@@ -183,6 +183,7 @@
     font-size: var(--font-size-mono-s);
     font-weight: var(--weight-medium);
     line-height: var(--line-height-mono-s);
+    letter-spacing: var(--letter-spacing-mono-regular);
 }
 
 .text-mono-m {
@@ -190,6 +191,25 @@
     font-size: var(--font-size-mono-m);
     font-weight: var(--weight-medium);
     line-height: var(--line-height-mono-m);
+    letter-spacing: var(--letter-spacing-mono-regular);
+}
+
+.text-mono-s-uppercase {
+    font-family: var(--font-default);
+    font-size: var(--font-size-mono-s);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-mono-s);
+    letter-spacing: var(--letter-spacing-mono-label);
+    text-transform: uppercase;
+}
+
+.text-mono-m-uppercase {
+    font-family: var(--font-default);
+    font-size: var(--font-size-mono-m);
+    font-weight: var(--weight-medium);
+    line-height: var(--line-height-mono-m);
+    letter-spacing: var(--letter-spacing-mono-heading);
+    text-transform: uppercase;
 }
 
 /* Small utility styles — IBM Plex Mono 600/500 */
