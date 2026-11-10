@@ -14,7 +14,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-    { label: "Home", to: "/#hero" },
+    { label: "Home", to: "/" },
     { label: "About", to: "/#about" },
     { label: "Works", to: "/#work" },
     { label: "Experience", to: "/#experience" },

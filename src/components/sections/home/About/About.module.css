@@ -128,6 +128,7 @@
     gap: var(--space-8);
     margin-inline: auto;
     text-align: center;
+    margin-top: var(--space-8);
 }
 
 .about__skills-contact {

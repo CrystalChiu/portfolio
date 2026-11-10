@@ -8,6 +8,7 @@ import { useProjectFilters } from "../hooks/useProjectFilters";
 import styles from "../components/sections/home/WorkShowcase/WorkShowcase.module.css";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Divider from "../components/ui/Divider/Divider";
+import FadeIn from "../components/ui/FadeIn/FadeIn";
 
 export default function Projects() {
     const {
@@ -27,24 +28,24 @@ export default function Projects() {
             <PageLayout>
                 <section className={styles.content}>
                     <div className={styles.content__heading}>
-                        <div className={styles.content__heading__group}>
+                        <FadeIn distance={20} className={styles.content__heading__group}>
                             <div className={styles.work__intro}>
                                 <h2 className="text-display-1">All Works</h2>
                                 <p>A collection of projects, problems solved, and the engineering behind the work. Explore the process, implementation, and impact of each.</p>
                             </div>
 
                             <Divider />
-                        </div>
 
-                        <ArrowTextNavLink
-                            to="/#work"
-                            icon={faArrowLeft}
-                            label="Back to Home"
-                            orientation="inline"
-                        />
+                            <ArrowTextNavLink
+                                to="/#work"
+                                icon={faArrowLeft}
+                                label="Back to Home"
+                                orientation="inline"
+                            />
+                        </FadeIn>
                     </div>
 
-                    <div className={styles.work__filters_bar}>
+                    <FadeIn distance={22} className={styles.work__filters_bar}>
                         <MultiselectDropdown
                             label="Category"
                             options={PROJECT_CATEGORIES}
@@ -75,7 +76,7 @@ export default function Projects() {
                                 </li>
                             </ul>
                         </Dropdown>
-                    </div>
+                    </FadeIn>
 
                     <div className={styles.work__active_filters}>
                         <span>

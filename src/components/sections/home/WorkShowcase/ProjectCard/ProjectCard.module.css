@@ -36,7 +36,7 @@
 .metadata {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-8);
     padding-top: var(--space-8);
 }
 
@@ -45,6 +45,11 @@
     align-items: baseline;
     justify-content: space-between;
     gap: var(--space-8);
+}
+
+.title_row h2 {
+    font-size: var(--font-size-header-2);
+    line-height: var(--line-height-header-2);
 }
 
 .type_tag {

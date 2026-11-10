@@ -7,12 +7,14 @@ import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
 import Credits from "./pages/Credits";
 import Projects from "./pages/Projects";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <Navbar />
 
+      <ScrollToTop />
       <Routes>
         <Route 
           path="/" 
